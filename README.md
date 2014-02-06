@@ -36,8 +36,14 @@ Afin d'obtenir les différents icônes utilisés dans l'application, veuillez t�
 dossier complet dans "web/css".
 
 
+### Configuration
+
+
 Personnalisez votre configuration dans le fichier app/config/parameters.yml avec votre
 base de données et vos paramètres smtp pour l'envoie de mail.
+
+
+### Assetic
 
 
 Pour minimifier et réunir les fichiers css et js exécutez la commande :
