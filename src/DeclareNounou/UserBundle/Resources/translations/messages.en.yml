@@ -1,0 +1,30 @@
+profile:
+    show:
+        username: Username
+        email: Email
+        home: Home
+        edit: Edit profile
+        change_password: Change password
+        profile: My profile
+        
+    edit:
+        submit: Update
+        title: Profile modification
+        back: Back
+        
+change_password:
+    title: Change password
+    submit: Change password
+    back: Back
+    
+security:
+    login:
+        submit: Login
+        username: Username
+        password: Password
+        remember_me: Remember me
+        title: Login
+        
+registration:
+    title: Register
+    submit: Register

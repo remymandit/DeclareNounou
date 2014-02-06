@@ -1,0 +1,30 @@
+contrat:
+    pattern:  /
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:index" }
+
+contrat_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:show" }
+
+contrat_new:
+    pattern:  /new
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:new" }
+
+contrat_create:
+    pattern:  /create
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:create" }
+    requirements: { _method: post }
+
+contrat_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:edit" }
+
+contrat_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:update" }
+    requirements: { _method: post|put }
+
+contrat_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:delete" }
+    requirements: { _method: post|delete }

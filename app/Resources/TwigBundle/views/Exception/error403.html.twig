@@ -1,0 +1,11 @@
+{# import du layout général #}
+{% extends "::layouterror.html.twig" %}
+
+{% block body %}
+
+    <img src="/uploads/img/icon-erreur-403.png" alt="error403" class="img-responsive"/>
+    <div class="alert alert-danger">
+    <h1>{{ 'error.403.status'|trans }}</h1>
+    <h4>{{ 'error.403.message'|trans }}</h4>
+</div>
+{% endblock %}

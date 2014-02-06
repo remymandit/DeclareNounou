@@ -1,0 +1,30 @@
+nounou:
+    pattern:  /
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:index" }
+
+nounou_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:show" }
+
+nounou_new:
+    pattern:  /new
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:new" }
+
+nounou_create:
+    pattern:  /create
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:create" }
+    requirements: { _method: post }
+
+nounou_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:edit" }
+
+nounou_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:update" }
+    requirements: { _method: post|put }
+
+nounou_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:delete" }
+    requirements: { _method: post|delete }

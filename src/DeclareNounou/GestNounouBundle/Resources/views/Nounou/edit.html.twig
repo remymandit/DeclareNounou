@@ -1,0 +1,18 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="offset2 span8">
+    <h1>Modifier la fiche nourrice</h1>
+    {# personnalisation des erreurs #}
+    {% form_theme edit_form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
+    {{ form(edit_form) }}
+    <p>
+        <a href="{{ path('nounou') }}" class="btn btn-success">
+            <span class="el-icon-chevron-left"></span>
+            Retour à la liste des nourrices
+        </a>
+    {{ form(delete_form) }}
+    </p>
+</div>
+{% endblock %}

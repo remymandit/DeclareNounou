@@ -1,0 +1,41 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+    <h1>Liste des enfants</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('enfant_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prenom }}</td>
+                <td>{% if entity.dateNaissance %}{{ entity.dateNaissance|localizeddate('medium','none') }}{% endif %}</td>
+                <td>
+                <p>
+                    <a href="{{ path('enfant_show', { 'id': entity.id }) }}" class="btn btn-success">
+                        <span class="el-icon-eye-open"></span> Voir</a>
+                    <a href="{{ path('enfant_edit', { 'id': entity.id }) }} " class="btn btn-warning">
+                        <span class="el-icon-edit"></span> Modifier</a>
+                </p>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path('enfant_new') }}" class="btn btn-primary">
+            <span class="el-icon-plus"></span> Ajouter un enfant
+        </a>
+    </p>
+{% endblock %}

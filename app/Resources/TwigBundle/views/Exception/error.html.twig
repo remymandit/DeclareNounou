@@ -1,0 +1,7 @@
+{# import du layout général #}
+{% extends "::layouterror.html.twig" %}
+
+{% block body %}
+<h2>{{ 'error.status'|trans }} : {{ status_code }}</h2>
+<h2>{{ 'error.message'|trans }} : {{ status_text }}</h2>
+{% endblock %}

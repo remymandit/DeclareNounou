@@ -1,0 +1,35 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="offset3 span6">
+<h1>Fiche de l'enfant</h1>
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ entity.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ entity.dateNaissance|date('d-m-Y') }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path('enfant') }}" class="btn btn-success">
+            <span class="el-icon-chevron-left"></span>
+            Retour à la liste des enfants
+        </a>
+        <a href="{{ path('enfant_edit', { 'id': entity.id }) }}" class="btn btn-warning">
+            <span class="el-icon-edit"></span>
+            Modifier
+        </a>
+        {{ form(delete_form) }}
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="offset3 span6">
+<h3>{{ 'registration.title'|trans }}</h3>
+</div>
+<div class="row-fluid">
+    <div class="well offset3 span6">
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+        {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary"><span class="el-icon-plus"></span> {{ 'registration.submit'|trans }}</button>
+        </form>
+    </div>
+</div>

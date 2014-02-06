@@ -1,0 +1,17 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="offset2 span8">
+    <h1>Ajouter un enfant</h1>
+    {# personnalisation des erreurs #}
+    {% form_theme form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
+    {{ form(form) }}
+    <p>
+        <a href="{{ path('enfant') }}" class="btn btn-success">
+            <span class="el-icon-chevron-left"></span>
+            Retour à la liste des enfants
+        </a>
+    </p>
+</div>
+{% endblock %}

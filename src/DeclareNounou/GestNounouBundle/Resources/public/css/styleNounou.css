@@ -1,0 +1,70 @@
+/* style générale */
+body {
+    padding-top: 40px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* style des blocs de l'accueil */
+.blocLink {
+    text-decoration: none !important;
+}
+
+.blocLink :hover, .blocLink :active {
+    background-color: transparent !important;
+}
+
+.alert.alert-perso {
+    background-color: #f1eac4;
+}
+
+.blocLink .alert.alert-perso :hover {
+    background-color: transparent;
+}
+
+/* style des lien du footer */
+.nav.contenu-bas > li {
+    padding: 10px 15px 10px !important;
+    color: #999999 !important;
+}
+
+.footer-link {
+    padding: 0px 0px 0px !important;
+    display: inline !important;
+}
+
+/* style des liens du menu haut */
+ul.nav.nav-pills.nav-stacked {
+    margin: 0px;
+}
+
+
+/* style du feedback */
+.feedback .feedback-link {
+    position: fixed;
+    left: 0;
+    top: 50%;
+}
+
+.feedback .trigger {
+    color: #fff;
+    background-color: #73d631;
+    display: block;
+    line-height: 50px;
+    height: 41px;
+    font-weight: bold;
+    padding: 0 10px;
+    margin-left: -28px;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.feedback a {
+    color: #73d631;
+}

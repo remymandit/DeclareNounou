@@ -1,0 +1,9 @@
+parameters:
+#    portfolio_remy_gest_nounou.example.class: DeclareNounou\GestNounouBundle\Example
+
+services:
+    # intl twig extension
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

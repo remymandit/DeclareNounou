@@ -1,0 +1,9 @@
+error:
+    status: Error status
+    message: Error message
+    403:
+        status: Sorry!
+        message: Access forbidden to this page.
+    404:
+        status: Warning!
+        message: The page you are looking for does not exist.

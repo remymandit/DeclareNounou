@@ -1,0 +1,11 @@
+{# import du layout général #}
+{% extends "::layouterror.html.twig" %}
+
+{% block body %}
+
+    <img src="/uploads/img/Error-Free-no-404.jpg" alt="error404" class="img-responsive"/>
+    <div class="alert alert-error">
+    <h1>{{ 'error.404.status'|trans }}</h1>
+    <h4>{{ 'error.404.message'|trans }}</h4>
+</div>
+{% endblock %}

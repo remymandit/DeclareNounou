@@ -1,0 +1,7 @@
+parameters:
+#    portfolio_remy_user.example.class: DeclareNounou\UserBundle\Example
+
+services:
+#    portfolio_remy_user.example:
+#        class: %portfolio_remy_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

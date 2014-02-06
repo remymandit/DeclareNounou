@@ -1,0 +1,59 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="offset3 span6">
+<h1>Fiche contrat</h1>
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Date de début</th>
+                <td>{{ entity.datedebut|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Date de fin</th>
+                <td>{{ entity.datefin|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Heures mensuels</th>
+                <td>{{ entity.heuresmensuels}}<span> h</span></td>
+            </tr>
+            <tr>
+                <th>Tarif horaire</th>
+                <td>{{ entity.tarifhoraire }}<span> €</span></td>
+            </tr>
+            <tr>
+                <th>Tarif repas</th>
+                <td>{{ entity.tarifrepas }}<span> €</span></td>
+            </tr>
+            <tr>
+                <th>Tarif indemnités</th>
+                <td>{{ entity.tarifindemnite }}<span> €</span></td>
+            </tr>
+            <tr>
+                <th>Enfant</th>
+                <td>{{ entity.enfant }}</td>
+            </tr>
+            <tr>
+                <th>Nounou</th>
+                <td>{{ entity.nounou }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path('contrat') }}" class="btn btn-success">
+            <span class="el-icon-chevron-left"></span>
+            Retour à la liste des contrats
+        </a>
+        <a href="{{ path('contrat_edit', { 'id': entity.id }) }}" class="btn btn-warning">
+            <span class="el-icon-edit"></span>
+            Modifier
+        </a>
+    {{ form(delete_form) }}
+    </p>
+</div>
+{% endblock %}

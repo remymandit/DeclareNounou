@@ -1,0 +1,10 @@
+error:
+    status: Statut de l'erreur
+    message: Message de l'erreur
+    403:
+        status: Oups !
+        message: Vous n'avez pas les droits d'accès à cette page.
+    404:
+        status: Attention !
+        message: La page que vous cherchez n'existe pas (ou plus).
+        
