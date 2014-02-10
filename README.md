@@ -1,6 +1,8 @@
 Déclare Nounou
 ========================
 
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/remymandit/DeclareNounou/badges/quality-score.png?s=b646fa0630123531fe1a6bf56d84797b7e931f35)](https://scrutinizer-ci.com/g/remymandit/DeclareNounou/)
+
 Déclare Nounou est une application web développée sous symfony2.4.0.
 
 Cette application permet de gérer les heures, le salaire et la déclaration CAF de la nourrice.
@@ -27,9 +29,14 @@ Installation
 ### Composer
 
 
-Pour installer les dépendances nécessaires, téléchargez Composer et exécutez la commande suivante :
+Pour installer les dépendances nécessaires, téléchargez [Composer](https://getcomposer.org/)
+ et exécutez la commande suivante :
 
     php composer.phar install
+
+
+### Icônes
+
 
 Afin d'obtenir les différents icônes utilisés dans l'application, veuillez télécharger 
 [Elusive-Icons Webfont](http://shoestrap.org/downloads/elusive-icons-webfont/) et copier le
@@ -40,12 +47,22 @@ dossier complet dans "web/css".
 
 
 Personnalisez votre configuration dans le fichier app/config/parameters.yml avec votre
-base de données et vos paramètres smtp pour l'envoie de mail.
+base de données et vos paramètres smtp pour l'envoi de mail.
+
+Pour créer la base de données exécutez la commande  suivante :
+
+    php app/console doctrine:database:create
+
+Puis pour générer les tables et le schéma :
+
+    php app/console doctrine:schema:update --force
 
 
 ### Assetic
 
 
+L'application utilise les bibliothèques uglifycss et uglify-js, il faut donc 
+télécharger [NodeJs](http://nodejs.org/).
 Pour minimifier et réunir les fichiers css et js exécutez la commande :
 
     php app/console assetic:dump --env=prod --no-debug
