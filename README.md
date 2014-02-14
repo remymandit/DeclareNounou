@@ -3,6 +3,8 @@ Déclare Nounou
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/remymandit/DeclareNounou/badges/quality-score.png?s=b646fa0630123531fe1a6bf56d84797b7e931f35)](https://scrutinizer-ci.com/g/remymandit/DeclareNounou/)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8/mini.png)](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8)
+
 Déclare Nounou est une application web développée sous symfony2.4.0.
 
 Cette application permet de gérer les heures, le salaire et la déclaration CAF de la nourrice.
