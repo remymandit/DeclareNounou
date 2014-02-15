@@ -10,22 +10,22 @@ class ContratType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('datedebut', 'date', array('label'=>'Date de début'))
-            ->add('datefin', 'date', array('label'=>'Date de fin'))
-            ->add('heuresmensuels', 'text', array('label' => 'Heures mensuelles'))
-            ->add('tarifhoraire','text', array('label'=>'Tarif horaire'))
-            ->add('tarifrepas','text', array('label'=>'Tarif repas'))
-            ->add('tarifindemnite','text', array('label'=>'Tarif indemnités'))
+            ->add('dateDebut', 'date', array('label'=>'Date de début'))
+            ->add('dateFin', 'date', array('label'=>'Date de fin'))
+            ->add('heuresMensuelles', 'text', array('label' => 'Heures mensuelles'))
+            ->add('tarifHoraire','text', array('label'=>'Tarif horaire'))
+            ->add('tarifRepas','text', array('label'=>'Tarif repas'))
+            ->add('tarifIndemnite','text', array('label'=>'Tarif indemnités'))
             ->add('enfant', 'entity', array(
                 'class' => 'DeclareNounouGestNounouBundle:Enfant',
                     'multiple' => false,
                     'expanded' => false,
-                    
+
                     ))
             ->add('nounou', 'entity', array(
                 'class' => 'DeclareNounouGestNounouBundle:Nounou',
@@ -34,7 +34,7 @@ class ContratType extends AbstractType
                     ))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

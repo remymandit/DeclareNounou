@@ -15,7 +15,7 @@ security:
             memory:
                 users:
         main:
-            id: fos_user.user_provider.username            
+            id: fos_user.user_provider.username
 
     firewalls:
         dev:
@@ -25,8 +25,9 @@ security:
         main:
             pattern: ^/
             anonymous: true
-            provider: main
             form_login:
+                provider: main
+                csrf_provider: form.csrf_provider
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
             logout:
@@ -36,5 +37,8 @@ security:
                 key: %secret%
 
     access_control:
+        - { path: ^/fr/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/fr/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/fr/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
-       # - { path: ^/, roles: ROLE_NOUNOU }
+        - { path: ^/, role: IS_AUTHENTICATED_FULLY }

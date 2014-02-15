@@ -10,24 +10,24 @@ class NounouType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('nom')
             ->add('prenom', 'text', array('label'=>'Prénom'))
-            ->add('datenaissance','date', array(
+            ->add('dateNaissance','date', array(
                 //pour afficher les 70 années précédent l'année en cours
                 'years' => range(date('Y')-70, date('Y')),
                 'label'=>'Date de naissance',
             ))
             ->add('adresse')
-            ->add('codepostal', 'text', array('label'=>'Code postal'))
+            ->add('codePostal', 'text', array('label'=>'Code postal'))
             ->add('ville')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

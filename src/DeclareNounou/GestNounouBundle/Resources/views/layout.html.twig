@@ -7,24 +7,21 @@
         <meta name="description" content="Application web de gestion de la nounou : déclaration du contrat, des heures, aides pour la caf.">
         <title>{% block title %}Gestion Nounou{% endblock %}</title>
 
-        <!-- Assetic va regrouper les fichiers css en un seul fichier
-        le filtre cssrewrite permet de réécrire tous les chemins relatifs contenu
-        dans les fichiers css 
-        le filtre yui_css va minifier le fichier css -->
-{% stylesheets filter='cssrewrite, uglifycss'
-'@DeclareNounouGestNounouBundle/Resources/public/css/styleNounou.css'
-'@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/css/bootstrap.css' 
-'@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/css/bootstrap-responsive.css'
-'css/elusive-iconfont-master/css/elusive-webfont.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />        
-{% endstylesheets %}
-        
+        {% stylesheets filter='cssrewrite, uglifycss'
+            '@DeclareNounouGestNounouBundle/Resources/public/css/styleNounou.css'
+            '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/css/bootstrap.css'
+            '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/css/bootstrap-responsive.css'
+            'bundles/declarenounougestnounou/css/elusive-iconfont-master/css/elusive-webfont.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+
     </head>
     <body>
         <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" 
+                    <a class="btn btn-navbar" data-toggle="collapse"
                        data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -47,7 +44,7 @@
                         </ul>
                         <ul class="nav pull-right" role="navigation">
                             <li class="dropdown">
-                                
+
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
                             <a id="dropProfil" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropProfil">
@@ -58,8 +55,7 @@
                                 <a href="{{ path('fos_user_profile_show') }}"><span class="el-icon-user"></span> Profil</a>
                             </li>
                             </ul>
-
-                {% else %}
+                        {% else %}
                             <a id="dropConnect" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-unlock"></span> <b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropConnect">
                             <li role="presentation">
@@ -69,7 +65,7 @@
                                 <a role="menuitem" tabindex="-1" href="{{ path('fos_user_registration_register') }}"><span class="el-icon-plus"></span> Inscription</a>
                             </li>
                             </ul>
-                {% endif %}
+                        {% endif %}
                             </li>
                         </ul>
                     </div>
@@ -89,24 +85,21 @@
                 </div>
               </div>
           </div>
-                        <footer class="navbar navbar-inverse">
-                            <div class="navbar-inner">
-                                <div class="container">
-                                    <ul class="nav contenu-bas pull-right">
-                                        <li>Rémy MANDIT © 2013 | <a class="footer-link" href="#">Mentions légales</a> | Propulsé par <a class="footer-link" href="http://symfony.com/">Symfony2</a> | Hebergé par <a class="footer-link" href="https://www.alwaysdata.com/">Alwaysdata</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </footer>
+        <footer class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <ul class="nav contenu-bas pull-right">
+                        <li>Rémy MANDIT © 2013 | <a class="footer-link" href="#">Mentions légales</a> | Propulsé par <a class="footer-link" href="http://symfony.com/">Symfony2</a> | Hebergé par <a class="footer-link" href="https://www.alwaysdata.com/">Alwaysdata</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
-                        <!-- Assetic va regrouper le fichiers js en un seul fichier 
-                        le filtre uglifyjs2 va miniser le fichier js -->
-            {% javascripts filter='uglifyjs2'
-                '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
-                '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/js/bootstrap.js' %}
-                        <script type="text/javascript" src="{{ asset_url }}">
-                        </script>                        
-            {% endjavascripts %}
-                        
-                    </body>    
-                </html>
+        {% javascripts filter='uglifyjs2'
+            '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
+            '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap/js/bootstrap.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+</html>

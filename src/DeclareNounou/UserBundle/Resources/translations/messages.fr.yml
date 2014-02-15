@@ -6,17 +6,17 @@ profile:
         edit: Modifier le profil
         change_password: Changer le mot de passe
         profile: Mon profil
-        
+
     edit:
         submit: Mettre à jour
         title: Modification du profil
         back: Retour
-        
+
 change_password:
     title: Modification du mot de passe
     submit: Modifier
     back: Retour
-    
+
 security:
     login:
         submit: Connexion
@@ -24,8 +24,7 @@ security:
         password: Mot de passe
         remember_me: Se souvenir de moi
         title: Connexion
-        
+
 registration:
     title: Inscription
     submit: Enregistrer
-        

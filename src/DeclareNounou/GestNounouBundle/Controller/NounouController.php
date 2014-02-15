@@ -14,7 +14,6 @@ use DeclareNounou\GestNounouBundle\Form\NounouType;
  */
 class NounouController extends Controller
 {
-
     /**
      * Lists all Nounou entities.
      *
@@ -29,6 +28,7 @@ class NounouController extends Controller
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Nounou entity.
      *
@@ -146,10 +146,18 @@ class NounouController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Modifier', 'attr' => array('class' => 'btn btn-warning')));
+        $form->add(
+            'submit',
+            'submit',
+            array(
+                'label' => 'Modifier',
+                'attr' => array('class' => 'btn btn-warning')
+            )
+        );
 
         return $form;
     }
+
     /**
      * Edits an existing Nounou entity.
      *
@@ -180,6 +188,7 @@ class NounouController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Nounou entity.
      *
