@@ -62,7 +62,7 @@ class Contrat
     /**
      * @var float
      *
-     * @ORM\Column(name="tarifHoraire", type="decimal", precision=4, scale=2)
+     * @ORM\Column(name="tarif_horaire", type="decimal", precision=4, scale=2)
      * @Assert\Range(min="0",max="20")
      */
     private $tarifHoraire;
