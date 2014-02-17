@@ -26,7 +26,7 @@ class ContratController extends Controller
             ->getRepository('DeclareNounouGestNounouBundle:Contrat')
             ->findBy(
                 array(),
-                array('datefin'=>'desc')
+                array('dateFin'=>'desc')
         );
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:index.html.twig', array(
@@ -232,7 +232,14 @@ class ContratController extends Controller
             ->createFormBuilder()
             ->setAction($this->generateUrl('contrat_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))
+            ->add(
+                'submit',
+                'submit',
+                array(
+                    'label' => 'Supprimer',
+                    'attr' => array('class' => 'btn btn-danger')
+                )
+            )
             ->getForm()
         ;
     }
