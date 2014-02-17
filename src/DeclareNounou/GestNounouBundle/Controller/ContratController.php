@@ -14,7 +14,6 @@ use DeclareNounou\GestNounouBundle\Form\ContratType;
  */
 class ContratController extends Controller
 {
-
     /**
      * Lists all Contrat entities.
      *
@@ -23,15 +22,18 @@ class ContratController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Contrat')
-                ->findBy(
-                        array(),//pas de critère
-                        array('datefin'=>'desc'));//tri par date de fin décroissant
+        $entities = $em
+            ->getRepository('DeclareNounouGestNounouBundle:Contrat')
+            ->findBy(
+                array(),
+                array('datefin'=>'desc')
+        );
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:index.html.twig', array(
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Contrat entity.
      *
@@ -108,7 +110,8 @@ class ContratController extends Controller
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:show.html.twig', array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        ));
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
@@ -149,10 +152,18 @@ class ContratController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Modifier', 'attr' => array('class' => 'btn btn-warning')));
+        $form->add(
+            'submit',
+            'submit',
+            array(
+                'label' => 'Modifier',
+                'attr' => array('class' => 'btn btn-warning')
+            )
+        );
 
         return $form;
     }
+
     /**
      * Edits an existing Contrat entity.
      *
@@ -183,6 +194,7 @@ class ContratController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Contrat entity.
      *
@@ -216,7 +228,8 @@ class ContratController extends Controller
      */
     private function createDeleteForm($id)
     {
-        return $this->createFormBuilder()
+        return $this
+            ->createFormBuilder()
             ->setAction($this->generateUrl('contrat_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))

@@ -14,7 +14,6 @@ use DeclareNounou\GestNounouBundle\Form\EnfantType;
  */
 class EnfantController extends Controller
 {
-
     /**
      * Lists all Enfant entities.
      *
@@ -29,6 +28,7 @@ class EnfantController extends Controller
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Enfant entity.
      *
@@ -62,12 +62,21 @@ class EnfantController extends Controller
     */
     private function createCreateForm(Enfant $entity)
     {
-        $form = $this->createForm(new EnfantType(), $entity, array(
-            'action' => $this->generateUrl('enfant_create'),
-            'method' => 'POST',
-        ));
+        $form = $this
+            ->createForm(new EnfantType(), $entity, array(
+                'action' => $this->generateUrl('enfant_create'),
+                'method' => 'POST',
+            )
+        );
 
-        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'btn btn-danger')));
+        $form->add(
+            'submit',
+            'submit',
+            array(
+                'label' => 'Ajouter',
+                'attr' => array('class' => 'btn btn-danger')
+            )
+        );
 
         return $form;
     }
@@ -150,6 +159,7 @@ class EnfantController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Enfant entity.
      *
@@ -180,6 +190,7 @@ class EnfantController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Enfant entity.
      *

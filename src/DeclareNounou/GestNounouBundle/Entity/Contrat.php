@@ -12,7 +12,7 @@ use Symfony\Component\Validator\ExecutionContextInterface;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\ContratRepository")
  * @ORM\HasLifecycleCallbacks()
- * @Assert\Callback(methods={"datesValide"})
+ * @Assert\Callback(methods={"datesValides"})
  */
 class Contrat
 {
@@ -24,13 +24,13 @@ class Contrat
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="DeclareNounou\GestNounouBundle\Entity\Enfant", inversedBy="contrats")
      * @ORM\JoinColumn(nullable=false)
      */
     private $enfant;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="DeclareNounou\GestNounouBundle\Entity\Nounou", inversedBy="contrats")
      * @ORM\JoinColumn(nullable=false)
@@ -40,54 +40,53 @@ class Contrat
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datedebut", type="date")
+     * @ORM\Column(name="date_debut", type="date")
      */
-    private $datedebut;
+    private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datefin", type="date")
+     * @ORM\Column(name="date_fin", type="date")
      */
-    private $datefin;
+    private $dateFin;
 
     /**
      * @var integer
-     * 
-     * @ORM\Column(name="heuresmensuels", type="integer")
+     *
+     * @ORM\Column(name="heures_mensuelles", type="integer")
      * @Assert\Range(min="0",max="999")
      */
-    private $heuresmensuels;
+    private $heuresMensuelles;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="tarifhoraire", type="decimal", precision=4, scale=2)
+     * @ORM\Column(name="tarifHoraire", type="decimal", precision=4, scale=2)
      * @Assert\Range(min="0",max="20")
      */
-    private $tarifhoraire;
+    private $tarifHoraire;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="tarifrepas", type="decimal", precision=3, scale=2)
+     * @ORM\Column(name="tarif_repas", type="decimal", precision=3, scale=2)
      * @Assert\Range(min="0",max="9")
      */
-    private $tarifrepas;
+    private $tarifRepas;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="tarifindemnite", type="decimal", precision=3, scale=2)
+     * @ORM\Column(name="tarif_indemnite", type="decimal", precision=3, scale=2)
      * @Assert\Range(min="0",max="10")
      */
-    private $tarifindemnite;
-
+    private $tarifIndemnite;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -95,147 +94,147 @@ class Contrat
     }
 
     /**
-     * Set datedebut
+     * Set dateDebut
      *
-     * @param \DateTime $datedebut
+     * @param  \DateTime $dateDebut
      * @return Contrat
      */
-    public function setDatedebut($datedebut)
+    public function setDateDebut($dateDebut)
     {
-        $this->datedebut = $datedebut;
-    
+        $this->dateDebut = $dateDebut;
+
         return $this;
     }
 
     /**
-     * Get datedebut
+     * Get dateDebut
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDatedebut()
+    public function getDateDebut()
     {
-        return $this->datedebut;
+        return $this->dateDebut;
     }
 
     /**
-     * Set datefin
+     * Set dateFin
      *
-     * @param \DateTime $datefin
+     * @param  \DateTime $dateFin
      * @return Contrat
      */
-    public function setDatefin($datefin)
+    public function setDateFin($dateFin)
     {
-        $this->datefin = $datefin;
-    
+        $this->dateFin = $dateFin;
+
         return $this;
     }
 
     /**
-     * Get datefin
+     * Get dateFin
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getDatefin()
+    public function getDateFin()
     {
-        return $this->datefin;
+        return $this->dateFin;
     }
 
     /**
-     * Set heuresmensuels
+     * Set heuresMensuelles
      *
-     * @param \DateTime $heuresmensuels
+     * @param  \DateTime $heuresMensuelles
      * @return Contrat
      */
-    public function setHeuresmensuels($heuresmensuels)
+    public function setHeuresMensuelles($heuresMensuelles)
     {
-        $this->heuresmensuels = $heuresmensuels;
-    
+        $this->heuresMensuelles = $heuresMensuelles;
+
         return $this;
     }
 
     /**
-     * Get heuresmensuels
+     * Get heuresMensuelles
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getHeuresmensuels()
+    public function getHeuresMensuelles()
     {
-        return $this->heuresmensuels;
+        return $this->heuresMensuelles;
     }
 
     /**
-     * Set tarifhoraire
+     * Set tarifHoraire
      *
-     * @param float $tarifhoraire
+     * @param  float   $tarifHoraire
      * @return Contrat
      */
-    public function setTarifhoraire($tarifhoraire)
+    public function setTarifHoraire($tarifHoraire)
     {
-        $this->tarifhoraire = $tarifhoraire;
-    
+        $this->tarifHoraire = $tarifHoraire;
+
         return $this;
     }
 
     /**
-     * Get tarifhoraire
+     * Get tarifHoraire
      *
-     * @return float 
+     * @return float
      */
-    public function getTarifhoraire()
+    public function getTarifHoraire()
     {
-        return $this->tarifhoraire;
+        return $this->tarifHoraire;
     }
 
     /**
-     * Set tarifrepas
+     * Set tarifRepas
      *
-     * @param float $tarifrepas
+     * @param  float   $tarifRepas
      * @return Contrat
      */
-    public function setTarifrepas($tarifrepas)
+    public function setTarifRepas($tarifRepas)
     {
-        $this->tarifrepas = $tarifrepas;
-    
+        $this->tarifRepas = $tarifRepas;
+
         return $this;
     }
 
     /**
-     * Get tarifrepas
+     * Get tarifRepas
      *
-     * @return float 
+     * @return float
      */
-    public function getTarifrepas()
+    public function getTarifRepas()
     {
-        return $this->tarifrepas;
+        return $this->tarifRepas;
     }
 
     /**
-     * Set tarifindemnite
+     * Set tarifIndemnite
      *
-     * @param float $tarifindemnite
+     * @param  float   $tarifIndemnite
      * @return Contrat
      */
-    public function setTarifindemnite($tarifindemnite)
+    public function setTarifIndemnite($tarifIndemnite)
     {
-        $this->tarifindemnite = $tarifindemnite;
-    
+        $this->tarifIndemnite = $tarifIndemnite;
+
         return $this;
     }
 
     /**
-     * Get tarifindemnite
+     * Get tarifIndemnite
      *
-     * @return float 
+     * @return float
      */
-    public function getTarifindemnite()
+    public function getTarifIndemnite()
     {
-        return $this->tarifindemnite;
+        return $this->tarifIndemnite;
     }
 
     /**
      * Set enfant
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfant
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Enfant $enfant
      * @return Contrat
      */
     public function setEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfant = null)
@@ -248,7 +247,7 @@ class Contrat
     /**
      * Get enfant
      *
-     * @return \DeclareNounou\GestNounouBundle\Entity\Enfant 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Enfant
      */
     public function getEnfant()
     {
@@ -258,7 +257,7 @@ class Contrat
     /**
      * Set nounou
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounou
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Nounou $nounou
      * @return Contrat
      */
     public function setNounou(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounou = null)
@@ -271,26 +270,25 @@ class Contrat
     /**
      * Get nounou
      *
-     * @return \DeclareNounou\GestNounouBundle\Entity\Nounou 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Nounou
      */
     public function getNounou()
     {
         return $this->nounou;
     }
-    
+
     /**
      * méthode vérifiant les dates début et fin
      * @param \Symfony\Component\Validator\ExecutionContextInterface $context
      */
-    public function datesValide(ExecutionContextInterface $context)
+    public function datesValides(ExecutionContextInterface $context)
     {
         //comparaison des dates début et fin
-        if($this->getDatedebut() >= $this->getDatefin())
-        {
+        if ($this->getDateDebut() >= $this->getDateFin()) {
             //la règle est violée
             //1er argument : l'argument concerné, ici "dateDebut"
             //2ème argument : le message d'erreur
-            $context->addViolationAt('datedebut', 'La date de début doit être inférieure à la date de fin.', array(),null);
+            $context->addViolationAt('dateDebut', 'La date de début doit être inférieure à la date de fin.', array(), null);
         }
     }
 }

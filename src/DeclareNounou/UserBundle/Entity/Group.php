@@ -12,12 +12,10 @@ class Group extends BaseGroup
 {
     /**
      *
-     * @var type 
+     * @var type
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 }
-
-?>

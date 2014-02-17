@@ -8,7 +8,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 /**
  * User
  *
- * @ORM\Table()
+ * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="DeclareNounou\UserBundle\Entity\UserRepository")
  */
 class User extends BaseUser
@@ -21,12 +21,12 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    
+
     /**
      *
      * @var type
      * @ORM\ManyToMany(targetEntity="DeclareNounou\UserBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_groupe",
+     * @ORM\JoinTable(name="fos_user_user_group",
      * joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      * inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
      * )

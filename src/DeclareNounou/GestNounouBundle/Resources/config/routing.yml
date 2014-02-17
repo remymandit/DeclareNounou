@@ -5,11 +5,11 @@ DeclareNounouGestNounouBundle_accueil:
 DeclareNounouGestNounouBundle_enfant:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/enfant.yml"
     prefix: /enfant
-    
+
 DeclareNounouGestNounouBundle_nounou:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/nounou.yml"
     prefix: /nounou
-    
+
 DeclareNounouGestNounouBundle_contrat:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/contrat.yml"
     prefix: /contrat

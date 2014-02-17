@@ -20,7 +20,7 @@ class Nounou
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="nounou")
@@ -44,9 +44,9 @@ class Nounou
     /**
      * @var string
      *
-     * @ORM\Column(name="datenaissance", type="date")
+     * @ORM\Column(name="date_naissance", type="date")
      */
-    private $datenaissance;
+    private $dateNaissance;
 
     /**
      * @var string
@@ -58,9 +58,9 @@ class Nounou
     /**
      * @var integer
      *
-     * @ORM\Column(name="codepostal", type="integer")
+     * @ORM\Column(name="code_postal", type="integer")
      */
-    private $codepostal;
+    private $codePostal;
 
     /**
      * @var string
@@ -69,11 +69,10 @@ class Nounou
      */
     private $ville;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,20 +82,20 @@ class Nounou
     /**
      * Set nom
      *
-     * @param string $nom
+     * @param  string $nom
      * @return Nounou
      */
     public function setNom($nom)
     {
         $this->nom = $nom;
-    
+
         return $this;
     }
 
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -106,20 +105,20 @@ class Nounou
     /**
      * Set prenom
      *
-     * @param string $prenom
+     * @param  string $prenom
      * @return Nounou
      */
     public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
-    
+
         return $this;
     }
 
     /**
      * Get prenom
      *
-     * @return string 
+     * @return string
      */
     public function getPrenom()
     {
@@ -127,45 +126,45 @@ class Nounou
     }
 
     /**
-     * Set datenaissance
+     * Set dateNaissance
      *
-     * @param string $datenaissance
+     * @param  string $dateNaissance
      * @return Nounou
      */
-    public function setDatenaissance($datenaissance)
+    public function setDateNaissance($dateNaissance)
     {
-        $this->datenaissance = $datenaissance;
-    
+        $this->dateNaissance = $dateNaissance;
+
         return $this;
     }
 
     /**
-     * Get datenaissance
+     * Get dateNaissance
      *
-     * @return string 
+     * @return string
      */
-    public function getDatenaissance()
+    public function getDateNaissance()
     {
-        return $this->datenaissance;
+        return $this->dateNaissance;
     }
 
     /**
      * Set adresse
      *
-     * @param string $adresse
+     * @param  string $adresse
      * @return Nounou
      */
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
-    
+
         return $this;
     }
 
     /**
      * Get adresse
      *
-     * @return string 
+     * @return string
      */
     public function getAdresse()
     {
@@ -173,58 +172,59 @@ class Nounou
     }
 
     /**
-     * Set codepostal
+     * Set codePostal
      *
-     * @param integer $codepostal
+     * @param  integer $codePostal
      * @return Nounou
      */
-    public function setCodepostal($codepostal)
+    public function setCodePostal($codePostal)
     {
-        $this->codepostal = $codepostal;
-    
+        $this->codePostal = $codePostal;
+
         return $this;
     }
 
     /**
-     * Get codepostal
+     * Get codePostal
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCodepostal()
+    public function getCodePostal()
     {
-        return $this->codepostal;
+        return $this->codePostal;
     }
 
     /**
      * Set ville
      *
-     * @param string $ville
+     * @param  string $ville
      * @return Nounou
      */
     public function setVille($ville)
     {
         $this->ville = $ville;
-    
+
         return $this;
     }
 
     /**
      * Get ville
      *
-     * @return string 
+     * @return string
      */
     public function getVille()
     {
         return $this->ville;
     }
-    
+
     /**
      * Méthode retournant une chaîne de caractères
      * constituée du nom et du prénom
      * @return type
      */
-    public function __toString() {
-        return $this->getNom().' '.$this->getPrenom();
+    public function __toString()
+    {
+        return sprintf('%s %s', $this->getNom(), $this->getPrenom());
     }
     /**
      * Constructor
@@ -237,7 +237,7 @@ class Nounou
     /**
      * Add contrats
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Contrat $contrats
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Contrat $contrats
      * @return Nounou
      */
     public function addContrat(\DeclareNounou\GestNounouBundle\Entity\Contrat $contrats)
@@ -260,7 +260,7 @@ class Nounou
     /**
      * Get contrats
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getContrats()
     {
