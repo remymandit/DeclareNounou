@@ -37,14 +37,6 @@ Pour installer les dépendances nécessaires, téléchargez [Composer](https://g
     php composer.phar install
 
 
-### Icônes
-
-
-Afin d'obtenir les différents icônes utilisés dans l'application, veuillez télécharger 
-[Elusive-Icons Webfont](http://shoestrap.org/downloads/elusive-icons-webfont/) et copier le
-dossier complet dans "web/css".
-
-
 ### Configuration
 
 
