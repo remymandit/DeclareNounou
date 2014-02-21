@@ -1,10 +1,14 @@
 language: php
-
 php:
-  - 5.3.3
   - 5.3
   - 5.4
-
-before_script: composer install -n
-
-script: phpunit -c app
+branches:
+  only:
+    - master
+before_script: 
+  - composer self-update
+  - composer install --dev --prefer-source
+  - mysql -e 'create database `declarenounoutest`;'
+  - mysql declarenounoutest < src/DeclareNounou/GestNounouBundle/Tests/Resources/data/fixture.sql
+  - mv src/DeclareNounou/GestNounouBundle/Tests/Functional/config/parameters.yml.dist src/DeclareNounou/GestNounouBundle/Tests/Functional/config/parameters.yml
+script: phpunit -c app --coverage-text
