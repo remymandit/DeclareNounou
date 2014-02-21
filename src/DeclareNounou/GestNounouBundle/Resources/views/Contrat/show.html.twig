@@ -12,27 +12,27 @@
             </tr>
             <tr>
                 <th>Date de début</th>
-                <td>{{ entity.datedebut|date('d-m-Y') }}</td>
+                <td>{{ entity.dateDebut|date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <th>Date de fin</th>
-                <td>{{ entity.datefin|date('d-m-Y') }}</td>
+                <td>{{ entity.dateFin|date('d-m-Y') }}</td>
             </tr>
             <tr>
-                <th>Heures mensuels</th>
-                <td>{{ entity.heuresmensuels}}<span> h</span></td>
+                <th>Heures mensuelles</th>
+                <td>{{ entity.heuresMensuelles}}<span> h</span></td>
             </tr>
             <tr>
                 <th>Tarif horaire</th>
-                <td>{{ entity.tarifhoraire }}<span> €</span></td>
+                <td>{{ entity.tarifHoraire }}<span> €</span></td>
             </tr>
             <tr>
                 <th>Tarif repas</th>
-                <td>{{ entity.tarifrepas }}<span> €</span></td>
+                <td>{{ entity.tarifRepas }}<span> €</span></td>
             </tr>
             <tr>
                 <th>Tarif indemnités</th>
-                <td>{{ entity.tarifindemnite }}<span> €</span></td>
+                <td>{{ entity.tarifIndemnite }}<span> €</span></td>
             </tr>
             <tr>
                 <th>Enfant</th>
@@ -51,7 +51,7 @@
         </a>
         <a href="{{ path('contrat_edit', { 'id': entity.id }) }}" class="btn btn-warning">
             <span class="el-icon-edit"></span>
-            Modifier
+            Modifier la fiche
         </a>
     {{ form(delete_form) }}
     </p>

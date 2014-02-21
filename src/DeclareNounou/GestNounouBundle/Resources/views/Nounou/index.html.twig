@@ -12,7 +12,7 @@
                 <th>Prénom</th>
                 <th>Date de naissance</th>
                 <th>Adresse</th>
-                <th>Codepostal</th>
+                <th>Code postal</th>
                 <th>Ville</th>
                 <th>Actions</th>
             </tr>
@@ -23,9 +23,9 @@
                 <td><a href="{{ path('nounou_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nom }}</td>
                 <td>{{ entity.prenom }}</td>
-                <td>{{ entity.datenaissance|localizeddate('medium','none') }}</td>
+                <td>{{ entity.dateNaissance|localizeddate('medium','none') }}</td>
                 <td>{{ entity.adresse }}</td>
-                <td>{{ entity.codepostal }}</td>
+                <td>{{ entity.codePostal }}</td>
                 <td>{{ entity.ville }}</td>
                 <td>
                     <p>

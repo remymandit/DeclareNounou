@@ -10,9 +10,9 @@
                 <th>Id</th>
                 <th>Enfant</th>
                 <th>Nounou</th>
-                <th>Date de debut</th>
+                <th>Date de début</th>
                 <th>Date de fin</th>
-                <th>Heures mensuels</th>
+                <th>Heures mensuelles</th>
                 <th>Tarif horaire</th>
                 <th>Tarif repas</th>
                 <th>Tarif indemnités</th>
@@ -25,12 +25,12 @@
                 <td><a href="{{ path('contrat_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.enfant }}</td>
                 <td>{{ entity.nounou }}</td>
-                <td>{% if entity.datedebut %}{{ entity.datedebut|localizeddate('medium','none') }}{% endif %}</td>
-                <td>{% if entity.datefin %}{{ entity.datefin|localizeddate('medium','none') }}{% endif %}</td>
-                <td>{{ entity.heuresmensuels }}<span> h</span></td>
-                <td>{{ entity.tarifhoraire }}<span> €</span></td>
-                <td>{{ entity.tarifrepas }}<span> €</span></td>
-                <td>{{ entity.tarifindemnite }}<span> €</span></td>
+                <td>{% if entity.dateDebut %}{{ entity.dateDebut|localizeddate('medium','none') }}{% endif %}</td>
+                <td>{% if entity.dateFin %}{{ entity.dateFin|localizeddate('medium','none') }}{% endif %}</td>
+                <td>{{ entity.heuresMensuelles }}<span> h</span></td>
+                <td>{{ entity.tarifHoraire }}<span> €</span></td>
+                <td>{{ entity.tarifRepas }}<span> €</span></td>
+                <td>{{ entity.tarifIndemnite }}<span> €</span></td>
                 <td>
                 <p>
                     <a href="{{ path('contrat_show', { 'id': entity.id }) }}" class="btn btn-success">

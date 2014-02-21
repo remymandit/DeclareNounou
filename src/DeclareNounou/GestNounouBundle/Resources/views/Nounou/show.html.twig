@@ -21,15 +21,15 @@
             </tr>
             <tr>
                 <th>Date de naissance</th>
-                <td>{{ entity.datenaissance|date('d-m-Y') }}</td>
+                <td>{{ entity.dateNaissance|date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <th>Adresse</th>
                 <td>{{ entity.adresse }}</td>
             </tr>
             <tr>
-                <th>Codepostal</th>
-                <td>{{ entity.codepostal }}</td>
+                <th>Code postal</th>
+                <td>{{ entity.codePostal }}</td>
             </tr>
             <tr>
                 <th>Ville</th>
@@ -44,7 +44,7 @@
         </a>
         <a href="{{ path('nounou_edit', { 'id': entity.id }) }}" class="btn btn-warning">
             <span class="el-icon-edit"></span>
-            Modifier
+            Modifier la fiche
         </a>
     {{ form(delete_form) }}
     </p>
