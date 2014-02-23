@@ -11,6 +11,6 @@ before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - mysql -e 'create database declarenounoutest;'
   - php app/console doctrine:schema:update --force
-  - php app/console doctrine:fixtures:load
+  - php app/console doctrine:fixtures:load --no-interaction
   
 script: phpunit -c app --coverage-text
