@@ -8,7 +8,9 @@ branches:
 before_script: 
   - composer self-update
   - composer install --dev --prefer-source
-  - mysql -e 'create database `declarenounoutest`;'
-  - mysql declarenounoutest < src/DeclareNounou/GestNounouBundle/Tests/Resources/data/fixture.sql
-  - mv src/DeclareNounou/GestNounouBundle/Tests/Functional/config/parameters.yml.dist src/DeclareNounou/GestNounouBundle/Tests/Functional/config/parameters.yml
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - mysql -e 'create database declarenounoutest;'
+  - php app/console doctrine:schema:update --force
+  - php app/console doctrine:fixtures:load
+  
 script: phpunit -c app --coverage-text
