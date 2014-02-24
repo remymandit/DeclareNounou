@@ -128,7 +128,7 @@ class Nounou
     /**
      * Set dateNaissance
      *
-     * @param  string $dateNaissance
+     * @param  \DateTime $dateNaissance
      * @return Nounou
      */
     public function setDateNaissance($dateNaissance)
@@ -141,7 +141,7 @@ class Nounou
     /**
      * Get dateNaissance
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateNaissance()
     {
