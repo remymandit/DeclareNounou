@@ -42,7 +42,7 @@ class Nounou
     private $prenom;
 
     /**
-     * @var string
+     * @var \DateTime
      *
      * @ORM\Column(name="date_naissance", type="date")
      */
