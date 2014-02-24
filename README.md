@@ -75,3 +75,5 @@ L'application contient les bundles suivants :
   * **winzou/console-bundle** - Accés à la console sur le serveur
 
   * **jms/security-extra-bundle** - Sécuriser l'accés à certaines pages grâce aux annotations
+  
+  * **doctrine/doctrine-fixtures-bundle** - Ajouter des fixtures (jeu de données) pour les tests
