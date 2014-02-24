@@ -19,7 +19,6 @@ class ContratControllerTest extends WebTestCase
             '_password' => 'secret',
         ));
         $client->submit($form);
-        $crawler = $client->followRedirect();
         
         // Create a new entry in the database
         $crawler = $client->request('GET', '/contrat/');
@@ -53,7 +52,6 @@ class ContratControllerTest extends WebTestCase
 
         // Delete the entity
         $client->submit($crawler->selectButton('Supprimer')->form());
-        $crawler = $client->followRedirect();
 
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/75/', $client->getResponse()->getContent());

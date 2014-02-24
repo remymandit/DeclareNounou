@@ -19,7 +19,7 @@ class LoadNounouData implements FixtureInterface
         $nounou->setAdresse('5 rue ici');
         $nounou->setCodePostal('75000');
         $nounou->setVille('Paris');
-        $nounou->setDateNaissance(new \dateTime('1975-01-01'));
+        $nounou->setDateNaissance(new \DateTime('1975-01-01'));
         $manager->persist($nounou);
         $manager->flush();
     }
