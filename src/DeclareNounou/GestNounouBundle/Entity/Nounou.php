@@ -220,7 +220,7 @@ class Nounou
     /**
      * Méthode retournant une chaîne de caractères
      * constituée du nom et du prénom
-     * @return type
+     * @return string
      */
     public function __toString()
     {

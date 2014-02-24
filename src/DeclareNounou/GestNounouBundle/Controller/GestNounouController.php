@@ -9,7 +9,7 @@ class GestNounouController extends Controller
     /**
      * Retourne la page d'accueil de l'appli nounou
      * ou affiche le formulaire login si l'utilisateur n'est pas logué
-     * @return type
+     * @return \Symfony\Component\HttpFoundation\Response
      *
      */
     public function indexAction()

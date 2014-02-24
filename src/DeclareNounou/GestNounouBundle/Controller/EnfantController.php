@@ -4,7 +4,6 @@ namespace DeclareNounou\GestNounouBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use DeclareNounou\GestNounouBundle\Entity\Enfant;
 use DeclareNounou\GestNounouBundle\Form\EnfantType;
 
