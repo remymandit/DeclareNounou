@@ -21,6 +21,18 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Enfant", mappedBy="user")
+     */
+    private $enfants;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Nounou", mappedBy="user")
+     */
+    private $nounous;
 
     /**
      *
@@ -32,4 +44,70 @@ class User extends BaseUser
      * )
      */
     protected $groups;
+
+    /**
+     * Add enfants
+     *
+     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
+     * @return User
+     */
+    public function addEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfants)
+    {
+        $this->enfants[] = $enfants;
+
+        return $this;
+    }
+
+    /**
+     * Remove enfants
+     *
+     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
+     */
+    public function removeEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfants)
+    {
+        $this->enfants->removeElement($enfants);
+    }
+
+    /**
+     * Get enfants
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEnfants()
+    {
+        return $this->enfants;
+    }
+    
+    /**
+     * Add nounous
+     *
+     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
+     * @return User
+     */
+    public function addNounous(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounous)
+    {
+        $this->nounous[] = $nounous;
+
+        return $this;
+    }
+
+    /**
+     * Remove nounous
+     *
+     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
+     */
+    public function removeNounous(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounous)
+    {
+        $this->nounous->removeElement($nounous);
+    }
+
+    /**
+     * Get nounous
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getNounous()
+    {
+        return $this->nounous;
+    }
 }

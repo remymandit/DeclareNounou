@@ -23,10 +23,7 @@ class ContratController extends Controller
 
         $entities = $em
             ->getRepository('DeclareNounouGestNounouBundle:Contrat')
-            ->findBy(
-                array(),
-                array('dateFin'=>'desc')
-        );
+            ->findByUser($this->getUser());
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:index.html.twig', array(
             'entities' => $entities,
@@ -66,7 +63,7 @@ class ContratController extends Controller
     */
     private function createCreateForm(Contrat $entity)
     {
-        $form = $this->createForm(new ContratType(), $entity, array(
+        $form = $this->createForm(new ContratType($this->getUser()), $entity, array(
             'action' => $this->generateUrl('contrat_create'),
             'method' => 'POST',
         ));
@@ -146,7 +143,7 @@ class ContratController extends Controller
     */
     private function createEditForm(Contrat $entity)
     {
-        $form = $this->createForm(new ContratType(), $entity, array(
+        $form = $this->createForm(new ContratType($this->getUser()), $entity, array(
             'action' => $this->generateUrl('contrat_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));

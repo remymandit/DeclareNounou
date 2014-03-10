@@ -20,8 +20,7 @@ class EnfantController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Enfant')->findAll();
+        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Enfant')->findByUser($this->getUser());
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:index.html.twig', array(
             'entities' => $entities,
@@ -40,6 +39,7 @@ class EnfantController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->setUser($this->getUser());
             $em->persist($entity);
             $em->flush();
 

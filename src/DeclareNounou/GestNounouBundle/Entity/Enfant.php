@@ -26,6 +26,13 @@ class Enfant
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="enfant")
      */
     private $contrats;
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="enfants")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
 
     /**
      * @var string
@@ -176,5 +183,28 @@ class Enfant
     public function getContrats()
     {
         return $this->contrats;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \DeclareNounou\UserBundle\Entity\User $user
+     * @return Enfant
+     */
+    public function setUser(\DeclareNounou\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \DeclareNounou\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

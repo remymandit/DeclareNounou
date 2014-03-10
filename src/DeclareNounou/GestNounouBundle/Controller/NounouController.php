@@ -21,7 +21,7 @@ class NounouController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Nounou')->findAll();
+        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Nounou')->findByUser($this->getUser());
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:index.html.twig', array(
             'entities' => $entities,
@@ -40,6 +40,7 @@ class NounouController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->setUser($this->getUser());
             $em->persist($entity);
             $em->flush();
 

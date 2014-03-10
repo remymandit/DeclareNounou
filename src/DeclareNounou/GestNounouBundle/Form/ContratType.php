@@ -5,10 +5,14 @@ namespace DeclareNounou\GestNounouBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
+use DeclareNounou\UserBundle\Entity\User;
 
 class ContratType extends AbstractType
 {
-        /**
+    private $user;
+    
+     /**
      * @param FormBuilderInterface $builder
      * @param array                $options
      */
@@ -23,16 +27,51 @@ class ContratType extends AbstractType
             ->add('tarifIndemnite','text', array('label'=>'Tarif indemnités'))
             ->add('enfant', 'entity', array(
                 'class' => 'DeclareNounouGestNounouBundle:Enfant',
-                    'multiple' => false,
-                    'expanded' => false,
-
+                'query_builder' => function(EntityRepository $repository)
+                {
+                    return $repository->createQueryBuilder('e')
+                            ->where('e.user = :user')
+                            ->setParameter('user',$this->getUser());
+                },
+                'multiple' => false,
+                'expanded' => false,
                     ))
             ->add('nounou', 'entity', array(
                 'class' => 'DeclareNounouGestNounouBundle:Nounou',
-                    'multiple' => false,
-                    'expanded' => false,
+                'query_builder' => function(EntityRepository $repository)
+                {
+                    return $repository->createQueryBuilder('n')
+                            ->where('n.user = :user')
+                            ->setParameter('user',$this->getUser());
+                },
+                'multiple' => false,
+                'expanded' => false,
                     ))
         ;
+    }
+    
+    /**
+     * 
+     * @return type \DeclareNounou\UserBundle\Entity\User
+     */
+    public function getUser(){
+        return $this->user;
+    }
+
+    /**
+     * 
+     * @param type \DeclareNounou\UserBundle\Entity\User
+     */
+    public function setUser($user){
+        $this->user = $user;
+    }
+
+    /**
+     * 
+     * @param \DeclareNounou\UserBundle\Entity\User $currentuser
+     */
+    public function __construct(User $currentuser) {
+        $this->user = $currentuser;
     }
 
     /**

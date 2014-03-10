@@ -26,6 +26,12 @@ class Nounou
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="nounou")
      */
     private $contrats;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="nounous")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
 
     /**
      * @var string
@@ -265,5 +271,28 @@ class Nounou
     public function getContrats()
     {
         return $this->contrats;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \DeclareNounou\UserBundle\Entity\User $user
+     * @return Nounou
+     */
+    public function setUser(\DeclareNounou\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \DeclareNounou\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

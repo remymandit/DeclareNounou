@@ -3,6 +3,7 @@
 namespace DeclareNounou\GestNounouBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use DeclareNounou\UserBundle\Entity\User;
 
 /**
  * ContratRepository
@@ -12,4 +13,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class ContratRepository extends EntityRepository
 {
+    /**
+     * Lists all Contrat entities by current user
+     * @param type DeclareNounou/UserBundle/Entity/User
+     * @return array de Contrat
+     */
+    public function findByUser(User $user)
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->join('c.enfant','e')
+                ->where('e.user = :user')
+                ->setParameter('user', $user)
+                ->orderBy('c.dateFin','DESC');
+        return $qb->getQuery()->getResult();
+    }
 }
