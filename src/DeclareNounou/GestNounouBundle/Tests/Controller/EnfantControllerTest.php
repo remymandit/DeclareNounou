@@ -16,12 +16,13 @@ class EnfantControllerTest extends WebTestCase
         $this->assertGreaterThan(0,$crawler->filter('h3:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
-            '_password' => 'secret',
+            '_password' => 'secret1',
         ));
         $client->submit($form);
         
         // Create a new entry in the database
         $crawler = $client->request('GET', '/enfant/');
+        $this->assertCount(1, $crawler->filter('td:contains("Daudet")'), 'Missing element td:contains("Daudet")');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /enfant/");
         $crawler = $client->click($crawler->selectLink('Ajouter un enfant')->link());
 

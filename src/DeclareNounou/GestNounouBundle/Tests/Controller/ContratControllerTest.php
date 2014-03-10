@@ -16,19 +16,21 @@ class ContratControllerTest extends WebTestCase
         $this->assertGreaterThan(0,$crawler->filter('h3:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
-            '_password' => 'secret',
+            '_password' => 'secret1',
         ));
         $client->submit($form);
         
         // Create a new entry in the database
         $crawler = $client->request('GET', '/contrat/');
+        $this->assertCount(1, $crawler->filter('td:contains("Daudet Alphonse")'), 'Missing element td:contains("Daudet Alphonse")');
+        $this->assertCount(1, $crawler->filter('td:contains("Duras Marguerite")'), 'Missing element td:contains("Duras Marguerite")');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /contrat/");
         $crawler = $client->click($crawler->selectLink('Ajouter un contrat')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Ajouter')->form(array(
             'DeclareNounou_gestnounoubundle_contrat[dateFin][day]'  => 2,
-            'DeclareNounou_gestnounoubundle_contrat[heuresMensuelles]'  => '120',
+            'DeclareNounou_gestnounoubundle_contrat[heuresMensuelles]'  => '150',
             'DeclareNounou_gestnounoubundle_contrat[tarifHoraire]'  => '4.5',
             'DeclareNounou_gestnounoubundle_contrat[tarifRepas]'  => '2.5',
             'DeclareNounou_gestnounoubundle_contrat[tarifIndemnite]'  => '0.33',
@@ -37,7 +39,7 @@ class ContratControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
 
         // Check data in the show view
-        $this->assertCount(1, $crawler->filter('td:contains("120")'), 'Missing element td:contains("120")');
+        $this->assertCount(1, $crawler->filter('td:contains("150")'), 'Missing element td:contains("120")');
 
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Modifier la fiche')->link());

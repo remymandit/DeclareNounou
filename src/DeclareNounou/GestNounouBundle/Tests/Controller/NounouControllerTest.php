@@ -16,12 +16,13 @@ class NounouControllerTest extends WebTestCase
         $this->assertGreaterThan(0,$crawler->filter('h3:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
-            '_password' => 'secret',
+            '_password' => 'secret1',
         ));
         $client->submit($form);
         
         // Create a new entry in the database
         $crawler = $client->request('GET', '/nounou/');
+        $this->assertCount(1, $crawler->filter('td:contains("Duras")'), 'Missing element td:contains("Duras")');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /nounou/");
         $crawler = $client->click($crawler->selectLink('Ajouter une nourrice')->link());
 
