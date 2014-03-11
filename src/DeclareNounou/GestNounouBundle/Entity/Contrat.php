@@ -142,7 +142,7 @@ class Contrat
     /**
      * Set heuresMensuelles
      *
-     * @param  \DateTime $heuresMensuelles
+     * @param  integer $heuresMensuelles
      * @return Contrat
      */
     public function setHeuresMensuelles($heuresMensuelles)
@@ -155,7 +155,7 @@ class Contrat
     /**
      * Get heuresMensuelles
      *
-     * @return \DateTime
+     * @return integer
      */
     public function getHeuresMensuelles()
     {
