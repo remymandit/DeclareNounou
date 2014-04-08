@@ -70,7 +70,7 @@ class Contrat
     /**
      * @var float
      *
-     * @ORM\Column(name="tarif_repas", type="decimal", precision=3, scale=2)
+     * @ORM\Column(name="tarif_repas", type="decimal", precision=3, scale=2, nullable=true)
      * @Assert\Range(min="0",max="9")
      */
     private $tarifRepas;
