@@ -36,6 +36,7 @@
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('enfant_new') }}">Enfant</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('nounou_new') }}">Nounou</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('contrat_new') }}">Contrat</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('pointage_new') }}">Pointage</a></li>
                                 </ul>
                             </li>
                             <li role="presentation"><a role="menuitem" href="#"><span class="el-icon-minus-sign"></span> Supprimer</a></li>
@@ -101,5 +102,7 @@
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
+        {% block script %}
+        {% endblock %}
     </body>
 </html>

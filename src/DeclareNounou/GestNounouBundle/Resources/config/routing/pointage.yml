@@ -1,0 +1,30 @@
+pointage:
+    pattern:  /
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:index" }
+
+pointage_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:show" }
+
+pointage_new:
+    pattern:  /new
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:new" }
+
+pointage_create:
+    pattern:  /create
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:create" }
+    requirements: { _method: post }
+
+pointage_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:edit" }
+
+pointage_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:update" }
+    requirements: { _method: post|put }
+
+pointage_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:delete" }
+    requirements: { _method: post|delete }

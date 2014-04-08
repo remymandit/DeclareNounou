@@ -1,0 +1,43 @@
+{# import du layout du bundle #}
+{% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
+
+{% block body %}
+<div class="offset3 span6">
+    <h1>Fiche du pointage</h1>
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Date de pointage</th>
+                <td>{{ entity.datePointage|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Heures réalisées pointage</th>
+                <td>{{ entity.heuresRealiseesPointage }}<span> h</span></td>
+            </tr>
+            <tr>
+                <th>Heures complémentaires</th>
+                <td>{{ entity.heuresComplementaires }}<span> h</span></td>
+            </tr>
+            <tr>
+                <th>Heures normales</th>
+                <td>{{ entity.heuresNormales }}<span> h</span></td>
+            </tr>
+            <tr>
+                <th>Repas</th>
+                <td>{{ entity.repas }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path('pointage') }}" class="btn btn-success">
+            <span class="el-icon-chevron-left"></span>
+            Retour à la liste des pointages
+        </a>
+        <a href="{{ path('pointage_edit', { 'id': entity.id }) }}" class="btn btn-warning">
+            <span class="el-icon-edit"></span>
+            Modifier la fiche
+        </a>
+        {{ form(delete_form) }}
+    </p>
+</div>
+{% endblock %}

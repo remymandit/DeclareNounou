@@ -13,3 +13,7 @@ DeclareNounouGestNounouBundle_nounou:
 DeclareNounouGestNounouBundle_contrat:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/contrat.yml"
     prefix: /contrat
+
+DeclareNounouGestNounouBundel_pointage:
+    resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/pointage.yml"
+    prefix: /pointage
