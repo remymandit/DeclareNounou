@@ -28,3 +28,5 @@ security:
 registration:
     title: Register
     submit: Register
+    confirmed: Congrats %username%, your account is now activated.
+    back: Back to the originating page.

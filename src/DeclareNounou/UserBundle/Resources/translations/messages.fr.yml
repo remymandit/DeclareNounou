@@ -28,3 +28,5 @@ security:
 registration:
     title: Inscription
     submit: Enregistrer
+    confirmed: Félicitations %username%, votre compte est maintenant activé.
+    back: Retour à la page d'origine.
