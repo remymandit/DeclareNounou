@@ -3,6 +3,7 @@
 namespace DeclareNounou\GestNounouBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use DeclareNounou\GestNounouBundle\Entity\AbstractPersonne;
 
 /**
  * Nounou
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\NounouRepository")
  */
-class Nounou
+class Nounou extends AbstractPersonne
 {
     /**
      * @var integer
@@ -31,28 +32,7 @@ class Nounou
      * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="nounous")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=255)
-     */
-    private $prenom;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_naissance", type="date")
-     */
-    private $dateNaissance;
+    private $user;    
 
     /**
      * @var string
@@ -84,7 +64,7 @@ class Nounou
     {
         return $this->id;
     }
-
+    
     /**
      * Set nom
      *
@@ -97,17 +77,7 @@ class Nounou
 
         return $this;
     }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
+    
     /**
      * Set prenom
      *
@@ -120,17 +90,7 @@ class Nounou
 
         return $this;
     }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
+    
     /**
      * Set dateNaissance
      *
@@ -142,16 +102,6 @@ class Nounou
         $this->dateNaissance = $dateNaissance;
 
         return $this;
-    }
-
-    /**
-     * Get dateNaissance
-     *
-     * @return \DateTime
-     */
-    public function getDateNaissance()
-    {
-        return $this->dateNaissance;
     }
 
     /**
@@ -222,16 +172,7 @@ class Nounou
     {
         return $this->ville;
     }
-
-    /**
-     * Méthode retournant une chaîne de caractères
-     * constituée du nom et du prénom
-     * @return string
-     */
-    public function __toString()
-    {
-        return sprintf('%s %s', $this->getNom(), $this->getPrenom());
-    }
+    
     /**
      * Constructor
      */
