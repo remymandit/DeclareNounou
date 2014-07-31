@@ -5,7 +5,7 @@ namespace DeclareNounou\GestNounouBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\MappedSuperClass
+ * @ORM\MappedSuperclass
  */
 abstract class AbstractPersonne
 {
