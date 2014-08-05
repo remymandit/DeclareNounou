@@ -1,8 +1,8 @@
 {% extends "DeclareNounouUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-    <div class="row-fluid">
-        <div class="offset3 span6">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
             <div class="alert alert-success">
                 {{ 'registration.confirmed'|trans({'%username%': user.username}) }}
             </div>
