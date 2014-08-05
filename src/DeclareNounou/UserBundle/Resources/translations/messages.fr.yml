@@ -30,3 +30,10 @@ registration:
     submit: Enregistrer
     confirmed: Félicitations %username%, votre compte est maintenant activé.
     back: Retour à la page d'origine.
+
+# Security
+"Bad credentials": Nom d'utilisateur ou mot de passe incorrect
+"User account is disabled.": Vous devez activer votre compte.
+"User account is locked.":   Le compte utilisateur est verrouillé.
+"User account has expired.": Le compte de l'utilisateur a expiré.
+"User credentials have expired.": Les informations d'identification ont expiré.
