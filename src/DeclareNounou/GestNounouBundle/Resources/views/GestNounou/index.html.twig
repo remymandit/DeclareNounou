@@ -5,8 +5,8 @@
     <h4>Bonjour {{ app.user.username }} !</h4>
  C'est parti pour déclarer un nouveau contrat, une nouvelle nounou, les heures,....
 </div>
-<div class="row-fluid">
-    <div class="span4">
+<div class="row">
+    <div class="col-md-4">
         <a class="blocLink" href="{{ path('nounou') }}">
             <div class="alert alert-info">
                 <h2><span class="el-icon-person"></span> Nounou</h2>
@@ -19,7 +19,7 @@
             </div>
         </a>
     </div>
-    <div class="span3">
+    <div class="col-md-3">
         <a class="blocLink" href="{{ path('contrat') }}">
             <div class="alert alert-danger">
                 <h2><span class="el-icon-list-alt"></span> Contrat</h2>
@@ -32,7 +32,7 @@
             </div>
         </a>
     </div>
-    <div class="span5">
+    <div class="col-md-5">
         <a class="blocLink" href="{{ path('pointage')}}">
             <div class="alert alert-success">
                 <h2><span class="el-icon-time"></span> Heures</h2>
@@ -46,8 +46,8 @@
         </a>
     </div>
 </div>
-<div class="row-fluid">
-    <div class="span3">
+<div class="row">
+    <div class="col-md-3">
         <a class="blocLink" href="{{ path('enfant') }}">
             <div class="alert alert-perso">
                 <h2><span class="el-icon-child"></span> Enfants</h2>
@@ -59,7 +59,7 @@
             </div>
         </a>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
         <a class="blocLink" href="#">
             <div class="alert alert-info">
                 <h2><span class="el-icon-calendar"></span> Calendrier</h2>
@@ -72,7 +72,7 @@
             </div>
         </a>
     </div>
-    <div class="span5">
+    <div class="col-md-5">
         <a class="blocLink" href="#">
             <div class="alert alert-danger">
                 <h2><span class="el-icon-share-alt"></span> Déclaration</h2>
