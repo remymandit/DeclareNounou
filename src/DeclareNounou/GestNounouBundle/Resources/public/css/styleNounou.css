@@ -68,3 +68,24 @@ ul.nav.nav-pills.nav-stacked {
 .feedback a {
     color: #73d631;
 }
+
+/* style du tag hr */
+hr {
+    display: block;
+    clear: both;
+    height: 0;
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 50px;
+    line-height: 1;
+}
+hr:after {
+    content: "\273D \273D \273D";
+    height: 0;			
+    letter-spacing: 1em;
+    color: #aaa;
+}
