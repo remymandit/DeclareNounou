@@ -1,0 +1,13 @@
+{% block date_widget -%}
+    {% if widget == 'single_text' %}
+        {{- block('form_widget_simple') -}}
+    {% else -%}
+        <div class="form-inline col-md-12">
+            {{- date_pattern|replace({
+                '{{ year }}':  form_widget(form.year, {'attr': {'class': 'form-control'}}),
+                '{{ month }}': form_widget(form.month, {'attr': {'class': 'form-control'}}),
+                '{{ day }}':   form_widget(form.day, {'attr': {'class': 'form-control'}}),
+            })|raw -}}
+        </div>
+    {%- endif %}
+{%- endblock date_widget %}
