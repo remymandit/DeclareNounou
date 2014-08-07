@@ -30,6 +30,12 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig'
+            - 'DeclareNounouGestNounouBundle:Form:fields_row.html.twig'
+            - 'DeclareNounouGestNounouBundle:Form:fields_date.html.twig'
+            - 'DeclareNounouGestNounouBundle:Form:fields_checkbox.html.twig'
 
 # Assetic Configuration
 assetic:
