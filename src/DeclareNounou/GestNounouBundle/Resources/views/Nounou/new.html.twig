@@ -4,14 +4,23 @@
 {% block body %}
 <div class="col-md-offset-2 col-md-8">
     <h1>Ajouter une nourrice</h1>
-    {# personnalisation des erreurs #}
-    {% form_theme form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
-    {{ form(form) }}
-    <p>
-        <a href="{{ path('nounou') }}" class="btn btn-success">
-            <span class="el-icon-chevron-left"></span>
-            Retour à la liste des nourrices
-        </a>
-    </p>
+    <div class="well">
+        {{ form_start(form) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.prenom) }}
+        {{ form_row(form.dateNaissance) }}
+        {{ form_row(form.adresse) }}
+        {{ form_row(form.codePostal) }}
+        {{ form_row(form.ville) }}
+        <hr>
+        <p>
+            <a href="{{ path('nounou') }}" class="btn btn-success">
+                <span class="el-icon-chevron-left"></span>
+                Retour à la liste des nourrices
+            </a>
+            {{ form_widget(form.submit) }}
+        </p>
+        {{ form_end(form)}}
+    </div>
 </div>
 {% endblock %}

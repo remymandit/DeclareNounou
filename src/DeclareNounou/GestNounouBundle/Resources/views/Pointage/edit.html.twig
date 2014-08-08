@@ -4,16 +4,25 @@
 {% block body %}
 <div class="col-md-offset-2 col-md-8">
     <h1>Modifier le pointage</h1>
-    {# personnalisation des erreurs #}
-    {% form_theme edit_form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
-    {{ form(edit_form) }}
-    <p >
-        <a href="{{ path('pointage') }}" class="btn btn-success">
-            <span class="el-icon-chevron-left"></span>
-            Retour à la liste des pointages
-        </a>
+    <div class="well">
+        {{ form_start(edit_form) }}
+        {{ form_row(edit_form.datePointage) }}
+        {{ form_row(edit_form.heuresRealiseesPointage) }}
+        {{ form_row(edit_form.heuresComplementaires) }}
+        {{ form_row(edit_form.heuresNormales) }}
+        {{ form_row(edit_form.repas) }}
+        {{ form_row(edit_form.periodes) }}
+        <hr>
+        <p>
+            <a href="{{ path('pointage') }}" class="btn btn-success">
+                <span class="el-icon-chevron-left"></span>
+                Retour à la liste des pointages
+            </a>
+            {{ form_widget(edit_form.submit) }}
+        </p>
+        {{ form_end(edit_form) }}
         {{ form(delete_form) }}
-    </p>
+    </div>
 </div>
 {% endblock %}
 {% block script %}

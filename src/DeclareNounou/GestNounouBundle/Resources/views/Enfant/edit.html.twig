@@ -4,15 +4,21 @@
 {% block body %}
 <div class="col-md-offset-2 col-md-8">
     <h1>Modifier la fiche enfant</h1>
-    {# personnalisation des erreurs #}
-    {% form_theme edit_form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
-    {{ form(edit_form) }}
-    <p>
-        <a href="{{ path('enfant') }} " class="btn btn-success">
-            <span class="el-icon-chevron-left"></span>
-            Retour à la liste des enfants
-        </a>
-   {{ form(delete_form) }}
-    </p>
+    <div class="well">
+        {{ form_start(edit_form) }}
+        {{ form_row(edit_form.nom) }}
+        {{ form_row(edit_form.prenom) }}
+        {{ form_row(edit_form.dateNaissance) }}
+        <hr>
+        <p>
+            <a href="{{ path('enfant') }} " class="btn btn-success">
+                <span class="el-icon-chevron-left"></span>
+                Retour à la liste des enfants
+            </a>
+            {{ form_widget(edit_form.submit) }}
+        </p>
+        {{ form_end(edit_form) }}
+        {{ form(delete_form) }}
+    </div>
 </div>
 {% endblock %}

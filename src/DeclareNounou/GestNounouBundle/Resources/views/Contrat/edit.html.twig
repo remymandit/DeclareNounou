@@ -4,15 +4,26 @@
 {% block body %}
 <div class="col-md-offset-2 col-md-8">
     <h1>Modifier le contrat</h1>
-    {# personnalisation des erreurs #}
-    {% form_theme edit_form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
-    {{ form(edit_form) }}
-    <p>
-        <a href="{{ path('contrat') }}" class="btn btn-success">
-            <span class="el-icon-chevron-left"></span>
-            Retour à la liste des contrats
-        </a>
-    {{ form(delete_form) }}
-    </p>
+    <div class="well">
+        {{ form_start(edit_form) }}
+        {{ form_row(edit_form.dateDebut) }}
+        {{ form_row(edit_form.dateFin) }}
+        {{ form_row(edit_form.heuresMensuelles) }}
+        {{ form_row(edit_form.tarifHoraire) }}
+        {{ form_row(edit_form.tarifRepas) }}
+        {{ form_row(edit_form.tarifIndemnite) }}
+        {{ form_row(edit_form.enfant) }}
+        {{ form_row(edit_form.nounou) }}
+        <hr>
+        <p>
+            <a href="{{ path('contrat') }}" class="btn btn-success">
+                <span class="el-icon-chevron-left"></span>
+                Retour à la liste des contrats
+            </a>
+            {{ form_widget(edit_form.submit) }}
+        </p>
+        {{ form_end(edit_form) }}        
+        {{ form(delete_form) }}
+    </div>
 </div>
 {% endblock %}
