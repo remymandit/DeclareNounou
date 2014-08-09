@@ -68,7 +68,7 @@ class ContratController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'btn btn-danger')));
+        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'addButton btn btn-danger')));
 
         return $form;
     }
@@ -153,7 +153,7 @@ class ContratController extends Controller
             'submit',
             array(
                 'label' => 'Modifier',
-                'attr' => array('class' => 'btn btn-warning')
+                'attr' => array('class' => 'updateButton btn btn-warning')
             )
         );
 
@@ -233,7 +233,7 @@ class ContratController extends Controller
                 'submit',
                 array(
                     'label' => 'Supprimer',
-                    'attr' => array('class' => 'btn btn-danger')
+                    'attr' => array('class' => 'deleteButton btn btn-danger')
                 )
             )
             ->getForm()

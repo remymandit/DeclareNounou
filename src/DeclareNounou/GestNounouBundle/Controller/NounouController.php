@@ -67,7 +67,7 @@ class NounouController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'btn btn-danger')));
+        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'addButton btn btn-danger')));
 
         return $form;
     }
@@ -151,7 +151,7 @@ class NounouController extends Controller
             'submit',
             array(
                 'label' => 'Modifier',
-                'attr' => array('class' => 'btn btn-warning')
+                'attr' => array('class' => 'updateButton btn btn-warning')
             )
         );
 
@@ -225,7 +225,7 @@ class NounouController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('nounou_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'deleteButton btn btn-danger')))
             ->getForm()
         ;
     }

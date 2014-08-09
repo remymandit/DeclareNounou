@@ -73,7 +73,7 @@ class EnfantController extends Controller
             'submit',
             array(
                 'label' => 'Ajouter',
-                'attr' => array('class' => 'btn btn-danger')
+                'attr' => array('class' => 'addButton btn btn-danger')
             )
         );
 
@@ -154,7 +154,7 @@ class EnfantController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Modifier', 'attr' => array('class' => 'btn btn-warning')));
+        $form->add('submit', 'submit', array('label' => 'Modifier', 'attr' => array('class' => 'updateButton btn btn-warning')));
 
         return $form;
     }
@@ -226,7 +226,7 @@ class EnfantController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('enfant_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'deleteButton btn btn-danger')))
             ->getForm()
         ;
     }
