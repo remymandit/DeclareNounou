@@ -41,31 +41,17 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="{{ path('fos_user_security_logout') }}"><span class="el-icon-lock"></span> Déconnexion</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('fos_user_profile_show') }}"><span class="el-icon-user"></span> Profil</a>
-                    </li>
-                    </ul>
-                {% else %}
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-unlock"></span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="{{ path('fos_user_security_login') }}"><span class="el-icon-unlock"></span> Connexion</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('fos_user_registration_register') }}"><span class="el-icon-plus"></span> Inscription</a>
-                    </li>
-                    </ul>
-                {% endif %}
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}"><span class="el-icon-lock"></span> Déconnexion</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_profile_show') }}"><span class="el-icon-user"></span> Profil</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
-
     </div>
 </nav>
