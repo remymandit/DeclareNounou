@@ -17,13 +17,15 @@
 
     </head>
     <body>
-        {% block navBarTop %}
-            {% include "DeclareNounouGestNounouBundle:Navbar:navBarTop.html.twig" %}
-        {% endblock %}
-        
-        {% block feedBack %}
-            {% include "DeclareNounouGestNounouBundle:Navbar:feedBack.html.twig" %}
-        {% endblock %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+            {% block navBarTop %}
+                {% include "DeclareNounouGestNounouBundle:Navbar:navBarTop.html.twig" %}
+            {% endblock %}
+
+            {% block feedBack %}
+                {% include "DeclareNounouGestNounouBundle:Navbar:feedBack.html.twig" %}
+            {% endblock %}
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div id="content" class="col-md-12">
@@ -33,9 +35,11 @@
             </div>
         </div>
         
-        {% block navBarFooter %}
-            {% include "DeclareNounouGestNounouBundle:Navbar:navBarFooter.html.twig" %}
-        {% endblock %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+            {% block navBarFooter %}
+                {% include "DeclareNounouGestNounouBundle:Navbar:navBarFooter.html.twig" %}
+            {% endblock %}
+        {% endif %}
         
         {% javascripts filter='uglifyjs2'
             '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
