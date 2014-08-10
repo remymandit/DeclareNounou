@@ -10,7 +10,6 @@
         {% stylesheets filter='cssrewrite, uglifycss'
             '@DeclareNounouGestNounouBundle/Resources/public/css/styleNounou.css'
             '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap3/css/bootstrap.css'
-            
             'bundles/declarenounougestnounou/css/elusive-iconfont-master/css/elusive-webfont.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
@@ -18,100 +17,26 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                       data-target="#menutop-navbar-collapse">
-                        <span class="sr-only">Toogle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ path('DeclareNounouGestNounouBundle_accueil') }}"><span class="el-icon-home"></span> Gestion Nounou</a>
-                </div>    
-                    <div class="collapse navbar-collapse" id="menutop-navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-plus"></span> Ajouter</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ path('enfant_new') }}">Enfant</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('nounou_new') }}">Nounou</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('contrat_new') }}">Contrat</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('pointage_new') }}">Pointage</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#"><span class="el-icon-minus-sign"></span> Supprimer</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#"><span class="el-icon-edit"></span> Modifier</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#"><span class="el-icon-envelope"></span> Contact</a>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ path('fos_user_security_logout') }}"><span class="el-icon-lock"></span> Déconnexion</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('fos_user_profile_show') }}"><span class="el-icon-user"></span> Profil</a>
-                            </li>
-                            </ul>
-                        {% else %}
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-unlock"></span> <b class="caret"></b></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ path('fos_user_security_login') }}"><span class="el-icon-unlock"></span> Connexion</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('fos_user_registration_register') }}"><span class="el-icon-plus"></span> Inscription</a>
-                            </li>
-                            </ul>
-                        {% endif %}
-                            </li>
-                        </ul>
-                    </div>
-                
-            </div>
-        </nav>
-        <div class="feedback">
-            <div class="feedback-link">
-                <a href="#" class="trigger">Feedback</a>
-            </div>
-        </div>
+        {% block navBarTop %}
+            {% include "DeclareNounouGestNounouBundle:Navbar:navBarTop.html.twig" %}
+        {% endblock %}
+        
+        {% block feedBack %}
+            {% include "DeclareNounouGestNounouBundle:Navbar:feedBack.html.twig" %}
+        {% endblock %}
         <div class="container">
             <div class="row">
                 <div id="content" class="col-md-12">
-                        {% block body %}
-                        {% endblock %}
+                    {% block body %}
+                    {% endblock %}
                 </div>
-              </div>
-          </div>
-        <footer class="navbar navbar-inverse">
-            
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav navbar-right contenu-bas">
-                        <li>Rémy MANDIT © 2014 | <a class="footer-link" href="#">Mentions légales</a> | Propulsé par <a class="footer-link" href="http://symfony.com/">Symfony2</a> | Hebergé par <a class="footer-link" href="https://www.alwaysdata.com/">Alwaysdata</a></li>
-                    </ul>
-                </div>
-            
-        </footer>
-
+            </div>
+        </div>
+        
+        {% block navBarFooter %}
+            {% include "DeclareNounouGestNounouBundle:Navbar:navBarFooter.html.twig" %}
+        {% endblock %}
+        
         {% javascripts filter='uglifyjs2'
             '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
             '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap3/js/bootstrap.js'
