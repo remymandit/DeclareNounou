@@ -140,7 +140,9 @@ class Periode
     {
         //comparaison des heures début et fin
         if ($this->getHeureDebut() >= $this->getHeureFin()) {
-            $context->addViolationAt('heureDebut', 'L\'heure de début doit être inférieure à l\'heure de fin.', array(), null);
+            $context->buildViolation('L\'heure de début doit être inférieure à l\'heure de fin.')
+                    ->atPath('heureDebut')
+                    ->addViolation();
         }
     }
 

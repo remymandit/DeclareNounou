@@ -286,9 +286,11 @@ class Contrat
         //comparaison des dates début et fin
         if ($this->getDateDebut() >= $this->getDateFin()) {
             //la règle est violée
-            //1er argument : l'argument concerné, ici "dateDebut"
-            //2ème argument : le message d'erreur
-            $context->addViolationAt('dateDebut', 'La date de début doit être inférieure à la date de fin.', array(), null);
+            //1er argument : le message d'erreur
+            //2ème argument : l'argument concerné, ici "dateDebut"
+            $context->buildViolation('La date de début doit être inférieure à la date de fin.')
+                    ->atPath('dateDebut')
+                    ->addViolation();
         }
     }
 }
