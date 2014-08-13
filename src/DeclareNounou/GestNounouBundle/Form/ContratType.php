@@ -52,7 +52,7 @@ class ContratType extends AbstractType
     
     /**
      * 
-     * @return type \DeclareNounou\UserBundle\Entity\User
+     * @return User \DeclareNounou\UserBundle\Entity\User
      */
     public function getUser(){
         return $this->user;
