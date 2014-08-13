@@ -13,7 +13,7 @@ class EnfantControllerTest extends WebTestCase
         
         // User registration
         $crawler = $client->request('GET','/fr/login');
-        $this->assertGreaterThan(0,$crawler->filter('h3:contains("Connexion")')->count());
+        $this->assertGreaterThan(0,$crawler->filter('html:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
             '_password' => 'secret1',

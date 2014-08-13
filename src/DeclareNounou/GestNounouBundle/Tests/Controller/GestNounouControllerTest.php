@@ -22,7 +22,7 @@ class GestNounouControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $fr_crawler = $client->request('GET', '/fr/login');
-        $this->assertGreaterThan(0,$fr_crawler->filter('h3:contains("Connexion")')->count());
+        $this->assertGreaterThan(0,$fr_crawler->filter('html:contains("Connexion")')->count());
     }
 }
 ?>
