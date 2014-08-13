@@ -71,7 +71,7 @@ class User extends BaseUser
     /**
      * Get enfants
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Enfant[] 
      */
     public function getEnfants()
     {
@@ -104,7 +104,7 @@ class User extends BaseUser
     /**
      * Get nounous
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Nounou[] 
      */
     public function getNounous()
     {

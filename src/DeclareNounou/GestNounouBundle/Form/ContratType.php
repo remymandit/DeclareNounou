@@ -60,7 +60,7 @@ class ContratType extends AbstractType
 
     /**
      * 
-     * @param type \DeclareNounou\UserBundle\Entity\User
+     * @param \DeclareNounou\UserBundle\Entity\User $user
      */
     public function setUser($user){
         $this->user = $user;
