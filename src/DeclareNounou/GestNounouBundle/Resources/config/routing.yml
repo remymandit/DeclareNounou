@@ -1,6 +1,7 @@
 DeclareNounouGestNounouBundle_accueil:
     pattern:  /
     defaults: { _controller: DeclareNounouGestNounouBundle:GestNounou:index }
+    requirements: { _method: get }
 
 DeclareNounouGestNounouBundle_enfant:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/enfant.yml"

@@ -1,14 +1,17 @@
 enfant:
     pattern:  /
     defaults: { _controller: "DeclareNounouGestNounouBundle:Enfant:index" }
+    requirements: { _method: get }
 
 enfant_show:
     pattern:  /{id}/show
     defaults: { _controller: "DeclareNounouGestNounouBundle:Enfant:show" }
+    requirements: { _method: get }
 
 enfant_new:
     pattern:  /new
     defaults: { _controller: "DeclareNounouGestNounouBundle:Enfant:new" }
+    requirements: { _method: get }
 
 enfant_create:
     pattern:  /create
@@ -18,6 +21,7 @@ enfant_create:
 enfant_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "DeclareNounouGestNounouBundle:Enfant:edit" }
+    requirements: { _method: get }
 
 enfant_update:
     pattern:  /{id}/update

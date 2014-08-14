@@ -1,14 +1,17 @@
 pointage:
     pattern:  /
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:index" }
+    requirements: { _method: get }
 
 pointage_show:
     pattern:  /{id}/show
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:show" }
+    requirements: { _method: get }
 
 pointage_new:
     pattern:  /new
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:new" }
+    requirements: { _method: get }
 
 pointage_create:
     pattern:  /create
@@ -18,6 +21,7 @@ pointage_create:
 pointage_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:edit" }
+    requirements: { _method: get }
 
 pointage_update:
     pattern:  /{id}/update

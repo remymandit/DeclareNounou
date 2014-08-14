@@ -1,14 +1,17 @@
 nounou:
     pattern:  /
     defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:index" }
+    requirements: { _method: get }
 
 nounou_show:
     pattern:  /{id}/show
     defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:show" }
+    requirements: { _method: get }
 
 nounou_new:
     pattern:  /new
     defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:new" }
+    requirements: { _method: get }
 
 nounou_create:
     pattern:  /create
@@ -18,6 +21,7 @@ nounou_create:
 nounou_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "DeclareNounouGestNounouBundle:Nounou:edit" }
+    requirements: { _method: get }
 
 nounou_update:
     pattern:  /{id}/update

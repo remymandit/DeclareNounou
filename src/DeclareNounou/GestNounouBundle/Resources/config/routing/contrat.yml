@@ -1,14 +1,17 @@
 contrat:
     pattern:  /
     defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:index" }
+    requirements: { _method: get }
 
 contrat_show:
     pattern:  /{id}/show
     defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:show" }
+    requirements: { _method: get }
 
 contrat_new:
     pattern:  /new
     defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:new" }
+    requirements: { _method: get }
 
 contrat_create:
     pattern:  /create
@@ -18,6 +21,7 @@ contrat_create:
 contrat_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "DeclareNounouGestNounouBundle:Contrat:edit" }
+    requirements: { _method: get }
 
 contrat_update:
     pattern:  /{id}/update
