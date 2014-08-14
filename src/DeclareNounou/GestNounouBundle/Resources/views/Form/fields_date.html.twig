@@ -7,7 +7,7 @@
                 '{{ year }}':  form_widget(form.year, {'attr': {'class': 'form-control'}}),
                 '{{ month }}': form_widget(form.month, {'attr': {'class': 'form-control'}}),
                 '{{ day }}':   form_widget(form.day, {'attr': {'class': 'form-control'}}),
-            })|raw -}}
+            })|markdown -}}
         </div>
     {%- endif %}
 {%- endblock date_widget %}
