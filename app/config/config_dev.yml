@@ -35,3 +35,4 @@ assetic:
 swiftmailer:
 # en mode dev tous les messages seront envoyés à cette adresse
     delivery_address: toto@example.fr
+    
