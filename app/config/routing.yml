@@ -38,3 +38,4 @@ fos_user_change_password:
     defaults: { _locale: fr }
     requirements:
         _locale: fr
+        

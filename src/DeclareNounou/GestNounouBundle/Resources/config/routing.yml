@@ -18,3 +18,4 @@ DeclareNounouGestNounouBundle_contrat:
 DeclareNounouGestNounouBundel_pointage:
     resource: "@DeclareNounouGestNounouBundle/Resources/config/routing/pointage.yml"
     prefix: /pointage
+    

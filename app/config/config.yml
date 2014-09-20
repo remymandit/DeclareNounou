@@ -85,3 +85,4 @@ fos_user:
     user_class: DeclareNounou\UserBundle\Entity\User
     group:
         group_class: DeclareNounou\UserBundle\Entity\Group
+        

@@ -7,3 +7,4 @@ error:
     404:
         status: Warning!
         message: The page you are looking for does not exist.
+        
