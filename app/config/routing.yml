@@ -28,7 +28,7 @@ fos_user_registrer:
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /{_locale}/resetting
-    defaults: {locale: fr }
+    defaults: { _locale: fr }
     requirements:
         _locale: fr
 
@@ -38,4 +38,3 @@ fos_user_change_password:
     defaults: { _locale: fr }
     requirements:
         _locale: fr
-        
