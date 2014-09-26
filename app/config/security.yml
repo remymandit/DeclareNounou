@@ -40,5 +40,6 @@ security:
         - { path: ^/fr/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/fr/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/fr/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/fr/demande-acces-beta, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/, role: IS_AUTHENTICATED_FULLY }

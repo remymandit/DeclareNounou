@@ -1,19 +1,7 @@
 {# import du layout du bundle GestNounou #}
 {% extends "DeclareNounouGestNounouBundle::layout.html.twig" %}
 
-{% block flash %}
-    {% for type, messages in app.session.flashbag.all() %}
-        {% for message in messages %}
-            <div class="alert alert-{{ type }}">
-                {{ message|trans({}, 'FOSUserBundle') }}
-            </div>
-        {% endfor %}
-    {% endfor %}
-{% endblock %}
-
 {% block body %}
-
-{% block fos_user_content %}
-{% endblock fos_user_content %}
-
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
 {% endblock %}

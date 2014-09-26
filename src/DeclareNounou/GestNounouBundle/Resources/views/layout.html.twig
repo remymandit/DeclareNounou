@@ -29,18 +29,27 @@
         <div class="container">
             <div class="row">
                 <div id="content" class="col-md-12">
+                    {% block flash %}
+                        {% for type, messages in app.session.flashbag.all() %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ type }}">
+                                    {{ message|trans({}, 'FOSUserBundle') }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock %}
                     {% block body %}
                     {% endblock %}
                 </div>
             </div>
         </div>
-        
+
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
             {% block navBarFooter %}
                 {% include "DeclareNounouGestNounouBundle:Navbar:navBarFooter.html.twig" %}
             {% endblock %}
         {% endif %}
-        
+
         {% javascripts filter='uglifyjs2'
             '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
             '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap3/js/bootstrap.js'

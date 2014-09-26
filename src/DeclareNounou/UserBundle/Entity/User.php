@@ -2,7 +2,10 @@
 
 namespace DeclareNounou\UserBundle\Entity;
 
+use DeclareNounou\GestNounouBundle\Entity\Enfant;
+use DeclareNounou\GestNounouBundle\Entity\Nounou;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
@@ -21,13 +24,13 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    
+
     /**
      *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Enfant", mappedBy="user")
      */
     private $enfants;
-    
+
     /**
      *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Nounou", mappedBy="user")
@@ -46,12 +49,19 @@ class User extends BaseUser
     protected $groups;
 
     /**
+     * @ORM\OneToOne(targetEntity="Invitation", mappedBy="user")
+     * @ORM\JoinColumn(referencedColumnName="code")
+     * @Assert\NotNull(message="Veuillez vérifier votre code d'invitation", groups={"Registration"})
+     */
+    protected $invitation;
+
+    /**
      * Add enfants
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
      * @return User
      */
-    public function addEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfants)
+    public function addEnfant(Enfant $enfants)
     {
         $this->enfants[] = $enfants;
 
@@ -63,7 +73,7 @@ class User extends BaseUser
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
      */
-    public function removeEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfants)
+    public function removeEnfant(Enfant $enfants)
     {
         $this->enfants->removeElement($enfants);
     }
@@ -71,20 +81,20 @@ class User extends BaseUser
     /**
      * Get enfants
      *
-     * @return \DeclareNounou\GestNounouBundle\Entity\Enfant[] 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Enfant[]
      */
     public function getEnfants()
     {
         return $this->enfants;
     }
-    
+
     /**
      * Add nounous
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
      * @return User
      */
-    public function addNounous(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounous)
+    public function addNounous(Nounou $nounous)
     {
         $this->nounous[] = $nounous;
 
@@ -96,7 +106,7 @@ class User extends BaseUser
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
      */
-    public function removeNounous(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounous)
+    public function removeNounous(Nounou $nounous)
     {
         $this->nounous->removeElement($nounous);
     }
@@ -104,10 +114,20 @@ class User extends BaseUser
     /**
      * Get nounous
      *
-     * @return \DeclareNounou\GestNounouBundle\Entity\Nounou[] 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Nounou[]
      */
     public function getNounous()
     {
         return $this->nounous;
+    }
+
+    public function setInvitation(Invitation $invitation)
+    {
+        $this->invitation = $invitation;
+    }
+
+    public function getInvitation()
+    {
+        return $this->invitation;
     }
 }

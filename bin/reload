@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$1" == "" ]; then
+    set $1 'dev'
+fi
+app/console doctrine:database:drop --force --env=$1
+app/console doctrine:database:create --env=$1 &&
+app/console doctrine:schema:create --env=$1 &&
+app/console doctrine:fixtures:load --no-interaction --env=$1
