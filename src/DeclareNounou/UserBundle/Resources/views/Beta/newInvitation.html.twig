@@ -1,0 +1,21 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="col-md-offset-3 col-md-6">
+        <h1><img src="{{ asset("../favicon.ico") }}" /> Gestion Nourrice</h1>
+    </div>
+    <div class="row">
+        <div class="well col-md-offset-3 col-md-6">
+            {% form_theme form 'DeclareNounouGestNounouBundle:Form:fields_errors.html.twig' %}
+            <form action="{{ path('ask_beta_key') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+            {{ form_errors(form) }}
+            {{ form_row(form.email) }}
+            <button type="submit" class="btn btn-primary"><span class="el-icon-plus"></span> Demander votre accès</button>
+            {{ form_end(form) }}
+            <hr>
+            <p>Vous avez reçu votre code ?<a href="{{ path('fos_user_registration_register') }}"> Créez votre compte</a></p>
+            <p>Vous avez déjà un compte actif ?<a href="{{ path('fos_user_security_login') }}"> Connectez vous</a></p>
+        </div>
+    </div>
+{% endblock fos_user_content %}
+

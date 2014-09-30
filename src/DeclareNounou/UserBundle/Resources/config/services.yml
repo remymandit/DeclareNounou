@@ -1,4 +1,16 @@
 parameters:
 
 services:
-    
+    declarenounou.registration.form.type:
+        class: DeclareNounou\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags: [{ name: "form.type", alias: "declarenounou_user_registration" }]
+
+    declarenounou.invitation.form.type:
+        class: DeclareNounou\UserBundle\Form\Type\InvitationFormType
+        arguments: [@declarenounou.invitation.form.data_transformer]
+        tags: [{ name: "form.type", alias: "declarenounou_invitation_type" }]
+
+    declarenounou.invitation.form.data_transformer:
+        class: DeclareNounou\UserBundle\Form\DataTransformer\InvitationToCodeTransformer
+        arguments: [@doctrine]

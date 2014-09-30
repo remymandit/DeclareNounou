@@ -1,0 +1,4 @@
+ask_beta_key:
+    pattern:  /demande-acces-beta
+    defaults: { _controller: DeclareNounouUserBundle:Beta:newInvitation }
+    requirements: { _method: GET|POST }
