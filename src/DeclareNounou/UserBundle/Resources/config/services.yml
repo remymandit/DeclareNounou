@@ -13,4 +13,4 @@ services:
 
     declarenounou.invitation.form.data_transformer:
         class: DeclareNounou\UserBundle\Form\DataTransformer\InvitationToCodeTransformer
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: [@doctrine]

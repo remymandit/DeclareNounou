@@ -3,7 +3,7 @@
 namespace DeclareNounou\UserBundle\Form\DataTransformer;
 
 use DeclareNounou\UserBundle\Entity\Invitation;
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
@@ -12,11 +12,11 @@ use Symfony\Component\Form\Exception\UnexpectedTypeException;
  */
 class InvitationToCodeTransformer implements DataTransformerInterface
 {
-    protected $entityManager;
+    protected $managerRegistry;
 
-    public function __construct(EntityManager $entityManager)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        $this->entityManager = $entityManager;
+        $this->managerRegistry = $managerRegistry;
     }
 
     public function transform($value)
@@ -42,7 +42,8 @@ class InvitationToCodeTransformer implements DataTransformerInterface
             throw new UnexpectedTypeException($value, 'string');
         }
 
-        return $this->entityManager
+        return $this->managerRegistry
+            ->getManager()
             ->getRepository('DeclareNounou\UserBundle\Entity\Invitation')
             ->findOneBy(array(
                 'code' => $value,
