@@ -3,7 +3,6 @@
 namespace DeclareNounou\GestNounouBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use DeclareNounou\GestNounouBundle\Entity\AbstractPersonne;
 
 /**
  * Enfant
@@ -27,7 +26,7 @@ class Enfant extends AbstractPersonne
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="enfant")
      */
     private $contrats;
-    
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="enfants")
@@ -128,7 +127,7 @@ class Enfant extends AbstractPersonne
     /**
      * Set user
      *
-     * @param \DeclareNounou\UserBundle\Entity\User $user
+     * @param  \DeclareNounou\UserBundle\Entity\User $user
      * @return Enfant
      */
     public function setUser(\DeclareNounou\UserBundle\Entity\User $user)
@@ -141,7 +140,7 @@ class Enfant extends AbstractPersonne
     /**
      * Get user
      *
-     * @return \DeclareNounou\UserBundle\Entity\User 
+     * @return \DeclareNounou\UserBundle\Entity\User
      */
     public function getUser()
     {

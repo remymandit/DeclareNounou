@@ -25,6 +25,7 @@ class ContratRepository extends EntityRepository
                 ->where('e.user = :user')
                 ->setParameter('user', $user)
                 ->orderBy('c.dateFin','DESC');
+
         return $qb->getQuery()->getResult();
     }
 }

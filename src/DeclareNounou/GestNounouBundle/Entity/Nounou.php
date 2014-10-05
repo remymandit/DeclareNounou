@@ -3,7 +3,6 @@
 namespace DeclareNounou\GestNounouBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use DeclareNounou\GestNounouBundle\Entity\AbstractPersonne;
 
 /**
  * Nounou
@@ -27,12 +26,12 @@ class Nounou extends AbstractPersonne
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="nounou")
      */
     private $contrats;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="nounous")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;    
+    private $user;
 
     /**
      * @var string
@@ -64,7 +63,7 @@ class Nounou extends AbstractPersonne
     {
         return $this->id;
     }
-    
+
     /**
      * Set nom
      *
@@ -77,7 +76,7 @@ class Nounou extends AbstractPersonne
 
         return $this;
     }
-    
+
     /**
      * Set prenom
      *
@@ -90,7 +89,7 @@ class Nounou extends AbstractPersonne
 
         return $this;
     }
-    
+
     /**
      * Set dateNaissance
      *
@@ -172,7 +171,7 @@ class Nounou extends AbstractPersonne
     {
         return $this->ville;
     }
-    
+
     /**
      * Constructor
      */
@@ -217,7 +216,7 @@ class Nounou extends AbstractPersonne
     /**
      * Set user
      *
-     * @param \DeclareNounou\UserBundle\Entity\User $user
+     * @param  \DeclareNounou\UserBundle\Entity\User $user
      * @return Nounou
      */
     public function setUser(\DeclareNounou\UserBundle\Entity\User $user)
@@ -230,7 +229,7 @@ class Nounou extends AbstractPersonne
     /**
      * Get user
      *
-     * @return \DeclareNounou\UserBundle\Entity\User 
+     * @return \DeclareNounou\UserBundle\Entity\User
      */
     public function getUser()
     {

@@ -20,10 +20,10 @@ class Pointage
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Periode", mappedBy="pointage", cascade={"persist"})
-     * 
+     *
      */
     private $periodes;
 
@@ -62,11 +62,10 @@ class Pointage
      */
     private $repas;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +75,7 @@ class Pointage
     /**
      * Set datePointage
      *
-     * @param \DateTime $datePointage
+     * @param  \DateTime $datePointage
      * @return Pointage
      */
     public function setDatePointage($datePointage)
@@ -89,7 +88,7 @@ class Pointage
     /**
      * Get datePointage
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDatePointage()
     {
@@ -99,7 +98,7 @@ class Pointage
     /**
      * Set heuresRealisees
      *
-     * @param float $heuresRealiseesPointage
+     * @param  float    $heuresRealiseesPointage
      * @return Pointage
      */
     public function setHeuresRealiseesPointage($heuresRealiseesPointage)
@@ -112,7 +111,7 @@ class Pointage
     /**
      * Get heuresRealiseesPointage
      *
-     * @return float 
+     * @return float
      */
     public function getHeuresRealiseesPointage()
     {
@@ -122,7 +121,7 @@ class Pointage
     /**
      * Set heuresComplementaires
      *
-     * @param float $heuresComplementaires
+     * @param  float    $heuresComplementaires
      * @return Pointage
      */
     public function setHeuresComplementaires($heuresComplementaires)
@@ -135,7 +134,7 @@ class Pointage
     /**
      * Get heuresComplementaires
      *
-     * @return float 
+     * @return float
      */
     public function getHeuresComplementaires()
     {
@@ -145,7 +144,7 @@ class Pointage
     /**
      * Set heuresNormales
      *
-     * @param float $heuresNormales
+     * @param  float    $heuresNormales
      * @return Pointage
      */
     public function setHeuresNormales($heuresNormales)
@@ -158,7 +157,7 @@ class Pointage
     /**
      * Get heuresNormales
      *
-     * @return float 
+     * @return float
      */
     public function getHeuresNormales()
     {
@@ -168,7 +167,7 @@ class Pointage
     /**
      * Set repas
      *
-     * @param boolean $repas
+     * @param  boolean  $repas
      * @return Pointage
      */
     public function setRepas($repas)
@@ -181,7 +180,7 @@ class Pointage
     /**
      * Get repas
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getRepas()
     {
@@ -198,7 +197,7 @@ class Pointage
     /**
      * Add periodes
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Periode $periodes
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Periode $periodes
      * @return Pointage
      */
     public function addPeriode(\DeclareNounou\GestNounouBundle\Entity\Periode $periodes)
@@ -221,7 +220,7 @@ class Pointage
     /**
      * Get periodes
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPeriodes()
     {

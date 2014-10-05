@@ -24,7 +24,7 @@ class Periode
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      *
      * @ORM\ManyToOne(targetEntity="DeclareNounou\GestNounouBundle\Entity\Pointage", inversedBy="periodes")
@@ -44,19 +44,18 @@ class Periode
      * @ORM\Column(name="heure_fin", type="time")
      */
     private $heureFin;
-    
+
     /**
      * @var float
-     * 
+     *
      * @ORM\Column(name="heures_realisees_periode", type="decimal", precision=4, scale=2)
      */
     private $heuresRealiseesPeriode;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -66,7 +65,7 @@ class Periode
     /**
      * Set heureDebut
      *
-     * @param \DateTime $heureDebut
+     * @param  \DateTime $heureDebut
      * @return Periode
      */
     public function setHeureDebut($heureDebut)
@@ -79,7 +78,7 @@ class Periode
     /**
      * Get heureDebut
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getHeureDebut()
     {
@@ -89,7 +88,7 @@ class Periode
     /**
      * Set heureFin
      *
-     * @param \DateTime $heureFin
+     * @param  \DateTime $heureFin
      * @return Periode
      */
     public function setHeureFin($heureFin)
@@ -102,7 +101,7 @@ class Periode
     /**
      * Get heureFin
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getHeureFin()
     {
@@ -112,7 +111,7 @@ class Periode
     /**
      * Set heuresRealiseesPeriode
      *
-     * @param float $heuresRealiseesPeriode
+     * @param  float   $heuresRealiseesPeriode
      * @return Periode
      */
     public function setHeuresRealiseesPeriode($heuresRealiseesPeriode)
@@ -125,13 +124,13 @@ class Periode
     /**
      * Get heuresRealiseesPeriode
      *
-     * @return float 
+     * @return float
      */
     public function getHeuresRealiseesPeriode()
     {
         return $this->heuresRealiseesPeriode;
     }
-    
+
     /**
      * méthode vérifiant les heures début et fin
      * @param \Symfony\Component\Validator\ExecutionContextInterface $context
@@ -149,7 +148,7 @@ class Periode
     /**
      * Set pointage
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Pointage $pointage
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Pointage $pointage
      * @return Periode
      */
     public function setPointage(\DeclareNounou\GestNounouBundle\Entity\Pointage $pointage = null)
@@ -162,7 +161,7 @@ class Periode
     /**
      * Get pointage
      *
-     * @return \DeclareNounou\GestNounouBundle\Entity\Pointage 
+     * @return \DeclareNounou\GestNounouBundle\Entity\Pointage
      */
     public function getPointage()
     {

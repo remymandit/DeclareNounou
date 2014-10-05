@@ -11,21 +11,21 @@ abstract class AbstractPersonne
 {
     /**
      * @var string
-     * 
+     *
      * @ORM\Column(name="nom", type="string", length=255)
      */
     protected $nom;
-    
+
     /**
      * @var string
-     * 
+     *
      * @ORM\Column(name="prenom", type="string", length=255)
      */
     protected $prenom;
-    
+
     /**
      * @var \DateTime
-     * 
+     *
      * @ORM\Column(name="date_naissance", type="date")
      */
     protected $dateNaissance;
@@ -59,7 +59,7 @@ abstract class AbstractPersonne
     {
         return $this->dateNaissance;
     }
-    
+
     /**
      * méthode retournant une chaîne de caractères
      * constituée du nom et du prénom
