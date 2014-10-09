@@ -9,6 +9,6 @@
 /vendor/
 /app/config/parameters.yml
 /nbproject/
-/bin/doctrine*
+/bin/
 *~
 *.htaccess
