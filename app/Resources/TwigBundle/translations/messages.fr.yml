@@ -7,4 +7,3 @@ error:
     404:
         status: Attention !
         message: La page que vous cherchez n'existe pas (ou plus).
-        
