@@ -25,7 +25,7 @@ class Configuration implements ConfigurationInterface
         // more information on that topic.
         $rootNode->children()
                 ->end();
-        
+
         return $treeBuilder;
     }
 }
