@@ -22,7 +22,7 @@ class LoadNounouData extends AbstractFixture implements OrderedFixtureInterface
         $nounou1->setVille('Paris');
         $nounou1->setDateNaissance(new \DateTime('1975-01-01'));
         $nounou1->setUser($this->getReference('user1'));
-        
+
         $nounou2 = new Nounou();
         $nounou2->setNom('Goya');
         $nounou2->setPrenom('Chantal');
@@ -31,14 +31,14 @@ class LoadNounouData extends AbstractFixture implements OrderedFixtureInterface
         $nounou2->setVille('Metz');
         $nounou2->setDateNaissance(new \DateTime('1960-02-02'));
         $nounou2->setUser($this->getReference('user2'));
-        
+
         $manager->persist($nounou2);
         $manager->persist($nounou1);
         $manager->flush();
-        
+
         $this->addReference('nounou1', $nounou1);
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -47,4 +47,3 @@ class LoadNounouData extends AbstractFixture implements OrderedFixtureInterface
         return 3;
     }
 }
-?>

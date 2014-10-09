@@ -5,7 +5,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use DeclareNounou\GestNounouBundle\Entity\Contrat;
 
-class LoadContratData Extends AbstractFixture implements OrderedFixtureInterface
+class LoadContratData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -23,11 +23,11 @@ class LoadContratData Extends AbstractFixture implements OrderedFixtureInterface
         $contrat->setTarifHoraire(2.50);
         $contrat->setTarifIndemnite(0.33);
         $contrat->setTarifRepas(3.50);
-        
+
         $manager->persist($contrat);
         $manager->flush();
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -36,4 +36,3 @@ class LoadContratData Extends AbstractFixture implements OrderedFixtureInterface
         return 4;
     }
 }
-?>
