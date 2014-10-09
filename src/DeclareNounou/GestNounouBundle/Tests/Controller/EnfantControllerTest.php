@@ -10,7 +10,7 @@ class EnfantControllerTest extends WebTestCase
     {
         // Create a new client to browse the application
         $client = static::createClient();
-        
+
         // User registration
         $crawler = $client->request('GET','/fr/login');
         $this->assertGreaterThan(0,$crawler->filter('html:contains("Connexion")')->count());
@@ -19,7 +19,7 @@ class EnfantControllerTest extends WebTestCase
             '_password' => 'secret1',
         ));
         $client->submit($form);
-        
+
         // Create a new entry in the database
         $crawler = $client->request('GET', '/enfant/');
         $this->assertCount(1, $crawler->filter('td:contains("Daudet")'), 'Missing element td:contains("Daudet")');
@@ -36,7 +36,7 @@ class EnfantControllerTest extends WebTestCase
 
         // Check data in the show view
         $this->assertCount(2, $crawler->filter('td:contains("Test")'), 'Missing element td:contains("Test")');
-        
+
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Modifier la fiche')->link());
         $form = $crawler->selectButton('Modifier')->form(array(
@@ -54,6 +54,6 @@ class EnfantControllerTest extends WebTestCase
 
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
-        
+
     }
 }

@@ -19,7 +19,7 @@ class ContratControllerTest extends WebTestCase
             '_password' => 'secret1',
         ));
         $client->submit($form);
-        
+
         // Create a new entry in the database
         $crawler = $client->request('GET', '/contrat/');
         $this->assertCount(1, $crawler->filter('td:contains("Daudet Alphonse")'), 'Missing element td:contains("Daudet Alphonse")');

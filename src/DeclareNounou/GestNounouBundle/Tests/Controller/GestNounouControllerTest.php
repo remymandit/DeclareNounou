@@ -25,4 +25,3 @@ class GestNounouControllerTest extends WebTestCase
         $this->assertGreaterThan(0,$fr_crawler->filter('html:contains("Connexion")')->count());
     }
 }
-?>

@@ -19,7 +19,7 @@ class NounouControllerTest extends WebTestCase
             '_password' => 'secret1',
         ));
         $client->submit($form);
-        
+
         // Create a new entry in the database
         $crawler = $client->request('GET', '/nounou/');
         $this->assertCount(1, $crawler->filter('td:contains("Duras")'), 'Missing element td:contains("Duras")');
