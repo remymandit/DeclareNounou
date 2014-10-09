@@ -5,7 +5,7 @@ namespace DeclareNounou\GestNounouBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use DeclareNounou\GestNounouBundle\Entity\Nounou;
-use DeclareNounou\GestNounouBundle\Form\NounouType;
+use DeclareNounou\GestNounouBundle\Form\Type\NounouType;
 
 /**
  * Nounou controller.
