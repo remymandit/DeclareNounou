@@ -58,7 +58,7 @@ class User extends BaseUser
     /**
      * Add enfants
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
      * @return User
      */
     public function addEnfant(Enfant $enfants)
@@ -91,7 +91,7 @@ class User extends BaseUser
     /**
      * Add nounous
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
      * @return User
      */
     public function addNounous(Nounou $nounous)
