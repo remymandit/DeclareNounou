@@ -146,8 +146,8 @@ class PointageController extends Controller
         ));
 
         $form->add(
-                'submit', 
-                'submit', 
+                'submit',
+                'submit',
                 array(
                     'label' => 'Modifier',
                     'attr' => array('class' => 'updateButton btn btn-warning')
