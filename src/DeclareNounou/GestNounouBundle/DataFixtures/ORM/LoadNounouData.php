@@ -37,6 +37,7 @@ class LoadNounouData extends AbstractFixture implements OrderedFixtureInterface
         $manager->flush();
 
         $this->addReference('nounou1', $nounou1);
+        $this->addReference('nounou2', $nounou2);
     }
 
     /**

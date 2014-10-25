@@ -3,12 +3,16 @@
 namespace DeclareNounou\GestNounouBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * Pointage
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\PointageRepository")
+ * @ORM\HasLifecycleCallbacks()
+ * @Assert\Callback(methods={"heuresValides"})
  */
 class Pointage
 {
@@ -22,10 +26,10 @@ class Pointage
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Periode", mappedBy="pointage", cascade={"persist"})
-     *
+     * @ORM\ManyToOne(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", inversedBy="pointages")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $periodes;
+    private $contrat;
 
     /**
      * @var \DateTime
@@ -33,6 +37,20 @@ class Pointage
      * @ORM\Column(name="date_pointage", type="date")
      */
     private $datePointage;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="heure_debut", type="time")
+     */
+    private $heureDebut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="heure_fin", type="time")
+     */
+    private $heureFin;
 
     /**
      * @var float
@@ -93,6 +111,52 @@ class Pointage
     public function getDatePointage()
     {
         return $this->datePointage;
+    }
+
+    /**
+     * Set heureDebut
+     *
+     * @param  \DateTime $heureDebut
+     * @return Pointage
+     */
+    public function setHeureDebut($heureDebut)
+    {
+        $this->heureDebut = $heureDebut;
+
+        return $this;
+    }
+
+    /**
+     * Get heureDebut
+     *
+     * @return \DateTime
+     */
+    public function getHeureDebut()
+    {
+        return $this->heureDebut;
+    }
+
+    /**
+     * Set heureFin
+     *
+     * @param  \DateTime $heureFin
+     * @return Pointage
+     */
+    public function setHeureFin($heureFin)
+    {
+        $this->heureFin = $heureFin;
+
+        return $this;
+    }
+
+    /**
+     * Get heureFin
+     *
+     * @return \DateTime
+     */
+    public function getHeureFin()
+    {
+        return $this->heureFin;
     }
 
     /**
@@ -186,44 +250,41 @@ class Pointage
     {
         return $this->repas;
     }
+
     /**
-     * Constructor
+     * méthode vérifiant les heures début et fin
+     * @param \Symfony\Component\Validator\ExecutionContextInterface $context
      */
-    public function __construct()
+    public function heuresValides(ExecutionContextInterface $context)
     {
-        $this->periodes = new \Doctrine\Common\Collections\ArrayCollection();
+        //comparaison des heures début et fin
+        if ($this->getHeureDebut() >= $this->getHeureFin()) {
+            $context->buildViolation('L\'heure de début doit être inférieure à l\'heure de fin.')
+                    ->atPath('heureDebut')
+                    ->addViolation();
+        }
     }
 
     /**
-     * Add periodes
+     * Set contrat
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Periode $periodes
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Contrat $contrat
      * @return Pointage
      */
-    public function addPeriode(\DeclareNounou\GestNounouBundle\Entity\Periode $periodes)
+    public function setContrat(\DeclareNounou\GestNounouBundle\Entity\Contrat $contrat)
     {
-        $this->periodes[] = $periodes;
+        $this->contrat = $contrat;
 
         return $this;
     }
 
     /**
-     * Remove periodes
+     * Get contrat
      *
-     * @param \DeclareNounou\GestNounouBundle\Entity\Periode $periodes
+     * @return \DeclareNounou\GestNounouBundle\Entity\Contrat
      */
-    public function removePeriode(\DeclareNounou\GestNounouBundle\Entity\Periode $periodes)
+    public function getContrat()
     {
-        $this->periodes->removeElement($periodes);
-    }
-
-    /**
-     * Get periodes
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPeriodes()
-    {
-        return $this->periodes;
+        return $this->contrat;
     }
 }

@@ -8,7 +8,10 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Contrat</th>
                 <th>Date pointage</th>
+                <th>Heure début</th>
+                <th>Heure fin</th>
                 <th>Heures réalisées</th>
                 <th>Heures complémentaires</th>
                 <th>Heures normales</th>
@@ -20,7 +23,10 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('pointage_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.contrat }}</td>
                 <td>{% if entity.datePointage %}{{ entity.datePointage|localizeddate('medium','none') }}{% endif %}</td>
+                <td>{{ entity.heureDebut|date('H:i') }}<span> h</span></td>
+                <td>{{ entity.heureFin|date('H:i') }}<span> h </span></td>
                 <td>{{ entity.heuresRealiseesPointage }}<span> h</span></td>
                 <td>{{ entity.heuresComplementaires }}<span> h</span></td>
                 <td>{{ entity.heuresNormales }}<span> h</span></td>

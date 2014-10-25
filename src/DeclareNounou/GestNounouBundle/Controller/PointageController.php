@@ -61,7 +61,7 @@ class PointageController extends Controller
     */
     private function createCreateForm(Pointage $entity)
     {
-        $form = $this->createForm(new PointageType(), $entity, array(
+        $form = $this->createForm(new PointageType($this->getUser()), $entity, array(
             'action' => $this->generateUrl('pointage_create'),
             'method' => 'POST',
         ));
@@ -140,7 +140,7 @@ class PointageController extends Controller
     */
     private function createEditForm(Pointage $entity)
     {
-        $form = $this->createForm(new PointageType(), $entity, array(
+        $form = $this->createForm(new PointageType($this->getUser()), $entity, array(
             'action' => $this->generateUrl('pointage_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -177,7 +177,7 @@ class PointageController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('pointage_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('pointage_show', array('id' => $id)));
         }
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:edit.html.twig', array(

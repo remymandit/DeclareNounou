@@ -23,7 +23,7 @@ class ContratControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/contrat/');
         $this->assertCount(1, $crawler->filter('td:contains("Daudet Alphonse")'), 'Missing element td:contains("Daudet Alphonse")');
-        $this->assertCount(1, $crawler->filter('td:contains("Duras Marguerite")'), 'Missing element td:contains("Duras Marguerite")');
+        $this->assertCount(2, $crawler->filter('td:contains("Duras Marguerite")'), 'Missing element td:contains("Duras Marguerite")');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /contrat/");
         $crawler = $client->click($crawler->selectLink('Ajouter un contrat')->link());
 
@@ -39,7 +39,7 @@ class ContratControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
 
         // Check data in the show view
-        $this->assertCount(1, $crawler->filter('td:contains("150")'), 'Missing element td:contains("120")');
+        $this->assertCount(1, $crawler->filter('td:contains("150")'), 'Missing element td:contains("150")');
 
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Modifier la fiche')->link());
@@ -49,7 +49,7 @@ class ContratControllerTest extends WebTestCase
         $client->submit($form);
         $crawler = $client->followRedirect();
 
-        // Check the element contains an attribute with value equals "Foo"
+        // Check the element contains an attribute with value equals "75"
         $this->assertCount(1, $crawler->filter('[value="75"]'), 'Missing element [value="75"]');
 
         // Delete the entity

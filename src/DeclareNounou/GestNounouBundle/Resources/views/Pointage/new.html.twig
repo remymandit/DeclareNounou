@@ -6,12 +6,14 @@
     <h1>Ajouter un pointage</h1>
     <div class="well">
         {{ form_start(form) }}
+        {{ form_row(form.contrat) }}
         {{ form_row(form.datePointage) }}
+        {{ form_row(form.heureDebut) }}
+        {{ form_row(form.heureFin) }}
         {{ form_row(form.heuresRealiseesPointage) }}
         {{ form_row(form.heuresComplementaires) }}
         {{ form_row(form.heuresNormales) }}
         {{ form_row(form.repas) }}
-        {{ form_row(form.periodes) }}
         <hr>
         <p>
             <a href="{{ path('pointage') }}" class="btn btn-success">
@@ -23,11 +25,4 @@
         {{ form_end(form)}}
     </div>
 </div>
-{% endblock %}
-{% block script %}
-{% javascripts filter='uglifyjs2'
-    '@DeclareNounouGestNounouBundle/Resources/public/js/add-periode.js'
-%}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
 {% endblock %}

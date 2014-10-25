@@ -36,6 +36,7 @@ twig:
             - 'DeclareNounouGestNounouBundle:Form:fields_row.html.twig'
             - 'DeclareNounouGestNounouBundle:Form:fields_date.html.twig'
             - 'DeclareNounouGestNounouBundle:Form:fields_checkbox.html.twig'
+            - 'DeclareNounouGestNounouBundle:Form:fields_time.html.twig'
 
 # Assetic Configuration
 assetic:

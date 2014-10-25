@@ -7,8 +7,20 @@
     <table class="table table-hover">
         <tbody>
             <tr>
+                <th>Contrat</th>
+                <td>{{ entity.contrat }}</td>
+            </tr>
+            <tr>
                 <th>Date de pointage</th>
                 <td>{{ entity.datePointage|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Heure début</th>
+                <td>{{ entity.heureDebut|date('H:i') }}</td>
+            </tr>
+            <tr>
+                <th>Heure fin</th>
+                <td>{{ entity.heureFin|date('H:i') }}</td>
             </tr>
             <tr>
                 <th>Heures réalisées pointage</th>

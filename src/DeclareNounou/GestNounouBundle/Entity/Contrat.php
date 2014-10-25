@@ -38,6 +38,12 @@ class Contrat
     private $nounou;
 
     /**
+     *
+     * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Pointage", mappedBy="contrat")
+     */
+    private $pointages;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_debut", type="date")
@@ -292,5 +298,55 @@ class Contrat
                     ->atPath('dateDebut')
                     ->addViolation();
         }
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pointages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add pointages
+     *
+     * @param  \DeclareNounou\GestNounouBundle\Entity\Pointage $pointages
+     * @return Contrat
+     */
+    public function addPointage(\DeclareNounou\GestNounouBundle\Entity\Pointage $pointages)
+    {
+        $this->pointages[] = $pointages;
+
+        return $this;
+    }
+
+    /**
+     * Remove pointages
+     *
+     * @param \DeclareNounou\GestNounouBundle\Entity\Pointage $pointages
+     */
+    public function removePointage(\DeclareNounou\GestNounouBundle\Entity\Pointage $pointages)
+    {
+        $this->pointages->removeElement($pointages);
+    }
+
+    /**
+     * Get pointages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPointages()
+    {
+        return $this->pointages;
+    }
+
+    /**
+     * méthode retournant une chaîne de caractères
+     * constituée de la date de début
+     * @return string
+     */
+    public function __toString()
+    {
+        return sprintf('%s: %s / %s', strftime('%b %y', $this->getDateDebut()->getTimestamp()), $this->getEnfant()->getPrenom(), $this->getNounou());
     }
 }

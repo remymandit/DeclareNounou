@@ -1,0 +1,10 @@
+{% block time_widget -%}
+    {% if widget == 'single_text' %}
+        {{- block('form_widget_simple') -}}
+    {% else -%}
+        {% set vars = widget == 'text' ? { 'attr': { 'size': 1 }} : {'attr': {'class': 'form-control'}} %}
+        <div class="form-inline col-md-12">
+            {{ form_widget(form.hour, vars) }}{% if with_minutes %}:{{ form_widget(form.minute, vars) }}{% endif %}{% if with_seconds %}:{{ form_widget(form.second, vars) }}{% endif %}
+        </div>
+    {%- endif %}
+{%- endblock time_widget %}
