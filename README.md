@@ -7,7 +7,7 @@ Déclare Nounou
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8/mini.png)](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8)
 
-Déclare Nounou est une application web développée sous symfony2.4.0.
+Déclare Nounou est une application web développée sous symfony2.5.5.
 
 Cette application permet de gérer les heures, le salaire et la déclaration CAF de la nourrice.
 
@@ -18,7 +18,7 @@ Plusieurs fonctionnalités sont/seront disponibles :
 * ajouter, modifier, lire et supprimer le contrat d'une nourrice [done]
 * s'inscrire, se connecter, modifier son profil [done]
 * envoyer un mail à l'administrateur pour son accord à l'inscription [todo]
-* ajouter, modifier, lire et supprimer les heures réalisées d'une nourrice [todo]
+* ajouter, modifier, lire et supprimer les heures réalisées d'une nourrice [done]
 * calcul du salaire en fonction des heures réalisées et des heures du contrat [todo]
 * récapitulatif des données mensuelles pour la déclaration CAF (pajemploi) [todo]
 * envoyer la fiche de paie au format pdf par mail à la nourrice [todo]
