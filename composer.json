@@ -20,7 +20,6 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
-        "winzou/console-bundle": "1.0.*",
         "jms/security-extra-bundle": "1.5.*@dev",
         "doctrine/doctrine-fixtures-bundle" : "2.2.*@dev",
         "knplabs/knp-markdown-bundle": "1.2.*@dev"
