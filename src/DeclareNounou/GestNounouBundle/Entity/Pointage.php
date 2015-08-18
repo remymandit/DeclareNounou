@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * Pointage
+ * Pointage.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\PointageRepository")
@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 class Pointage
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -74,16 +74,16 @@ class Pointage
     private $heuresNormales;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="repas", type="boolean", options={"default"=0})
      */
     private $repas;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -91,9 +91,10 @@ class Pointage
     }
 
     /**
-     * Set datePointage
+     * Set datePointage.
      *
-     * @param  \DateTime $datePointage
+     * @param \DateTime $datePointage
+     *
      * @return Pointage
      */
     public function setDatePointage($datePointage)
@@ -104,7 +105,7 @@ class Pointage
     }
 
     /**
-     * Get datePointage
+     * Get datePointage.
      *
      * @return \DateTime
      */
@@ -114,9 +115,10 @@ class Pointage
     }
 
     /**
-     * Set heureDebut
+     * Set heureDebut.
      *
-     * @param  \DateTime $heureDebut
+     * @param \DateTime $heureDebut
+     *
      * @return Pointage
      */
     public function setHeureDebut($heureDebut)
@@ -127,7 +129,7 @@ class Pointage
     }
 
     /**
-     * Get heureDebut
+     * Get heureDebut.
      *
      * @return \DateTime
      */
@@ -137,9 +139,10 @@ class Pointage
     }
 
     /**
-     * Set heureFin
+     * Set heureFin.
      *
-     * @param  \DateTime $heureFin
+     * @param \DateTime $heureFin
+     *
      * @return Pointage
      */
     public function setHeureFin($heureFin)
@@ -150,7 +153,7 @@ class Pointage
     }
 
     /**
-     * Get heureFin
+     * Get heureFin.
      *
      * @return \DateTime
      */
@@ -160,9 +163,10 @@ class Pointage
     }
 
     /**
-     * Set heuresRealisees
+     * Set heuresRealisees.
      *
-     * @param  float    $heuresRealiseesPointage
+     * @param float $heuresRealiseesPointage
+     *
      * @return Pointage
      */
     public function setHeuresRealiseesPointage($heuresRealiseesPointage)
@@ -173,7 +177,7 @@ class Pointage
     }
 
     /**
-     * Get heuresRealiseesPointage
+     * Get heuresRealiseesPointage.
      *
      * @return float
      */
@@ -183,9 +187,10 @@ class Pointage
     }
 
     /**
-     * Set heuresComplementaires
+     * Set heuresComplementaires.
      *
-     * @param  float    $heuresComplementaires
+     * @param float $heuresComplementaires
+     *
      * @return Pointage
      */
     public function setHeuresComplementaires($heuresComplementaires)
@@ -196,7 +201,7 @@ class Pointage
     }
 
     /**
-     * Get heuresComplementaires
+     * Get heuresComplementaires.
      *
      * @return float
      */
@@ -206,9 +211,10 @@ class Pointage
     }
 
     /**
-     * Set heuresNormales
+     * Set heuresNormales.
      *
-     * @param  float    $heuresNormales
+     * @param float $heuresNormales
+     *
      * @return Pointage
      */
     public function setHeuresNormales($heuresNormales)
@@ -219,7 +225,7 @@ class Pointage
     }
 
     /**
-     * Get heuresNormales
+     * Get heuresNormales.
      *
      * @return float
      */
@@ -229,9 +235,10 @@ class Pointage
     }
 
     /**
-     * Set repas
+     * Set repas.
      *
-     * @param  boolean  $repas
+     * @param bool $repas
+     *
      * @return Pointage
      */
     public function setRepas($repas)
@@ -242,9 +249,9 @@ class Pointage
     }
 
     /**
-     * Get repas
+     * Get repas.
      *
-     * @return boolean
+     * @return bool
      */
     public function getRepas()
     {
@@ -252,7 +259,8 @@ class Pointage
     }
 
     /**
-     * méthode vérifiant les heures début et fin
+     * méthode vérifiant les heures début et fin.
+     *
      * @param \Symfony\Component\Validator\ExecutionContextInterface $context
      */
     public function heuresValides(ExecutionContextInterface $context)
@@ -266,9 +274,10 @@ class Pointage
     }
 
     /**
-     * Set contrat
+     * Set contrat.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Contrat $contrat
+     * @param \DeclareNounou\GestNounouBundle\Entity\Contrat $contrat
+     *
      * @return Pointage
      */
     public function setContrat(\DeclareNounou\GestNounouBundle\Entity\Contrat $contrat)
@@ -279,7 +288,7 @@ class Pointage
     }
 
     /**
-     * Get contrat
+     * Get contrat.
      *
      * @return \DeclareNounou\GestNounouBundle\Entity\Contrat
      */

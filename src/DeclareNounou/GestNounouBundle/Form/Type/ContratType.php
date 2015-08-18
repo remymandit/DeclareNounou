@@ -19,18 +19,18 @@ class ContratType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dateDebut', 'date', array('label'=>'Date de début'))
-            ->add('dateFin', 'date', array('label'=>'Date de fin'))
+            ->add('dateDebut', 'date', array('label' => 'Date de début'))
+            ->add('dateFin', 'date', array('label' => 'Date de fin'))
             ->add('heuresMensuelles', 'text', array('label' => 'Heures mensuelles'))
-            ->add('tarifHoraire','text', array('label'=>'Tarif horaire'))
-            ->add('tarifRepas','text', array('label'=>'Tarif repas'))
-            ->add('tarifIndemnite','text', array('label'=>'Tarif indemnités'))
+            ->add('tarifHoraire', 'text', array('label' => 'Tarif horaire'))
+            ->add('tarifRepas', 'text', array('label' => 'Tarif repas'))
+            ->add('tarifIndemnite', 'text', array('label' => 'Tarif indemnités'))
             ->add('enfant', 'entity', array(
                 'class' => 'DeclareNounouGestNounouBundle:Enfant',
                 'query_builder' => function (EntityRepository $repository) {
                     return $repository->createQueryBuilder('e')
                             ->where('e.user = :user')
-                            ->setParameter('user',$this->getUser());
+                            ->setParameter('user', $this->getUser());
                 },
                 'multiple' => false,
                 'expanded' => false,
@@ -40,7 +40,7 @@ class ContratType extends AbstractType
                 'query_builder' => function (EntityRepository $repository) {
                     return $repository->createQueryBuilder('n')
                             ->where('n.user = :user')
-                            ->setParameter('user',$this->getUser());
+                            ->setParameter('user', $this->getUser());
                 },
                 'multiple' => false,
                 'expanded' => false,
@@ -49,7 +49,6 @@ class ContratType extends AbstractType
     }
 
     /**
-     *
      * @return User \DeclareNounou\UserBundle\Entity\User
      */
     public function getUser()
@@ -58,7 +57,6 @@ class ContratType extends AbstractType
     }
 
     /**
-     *
      * @param \DeclareNounou\UserBundle\Entity\User $user
      */
     public function setUser($user)
@@ -67,7 +65,6 @@ class ContratType extends AbstractType
     }
 
     /**
-     *
      * @param \DeclareNounou\UserBundle\Entity\User $currentuser
      */
     public function __construct(User $currentuser)
@@ -81,7 +78,7 @@ class ContratType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Contrat'
+            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Contrat',
         ));
     }
 

@@ -16,14 +16,14 @@ class NounouType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('prenom', 'text', array('label'=>'Prénom'))
-            ->add('dateNaissance','date', array(
+            ->add('prenom', 'text', array('label' => 'Prénom'))
+            ->add('dateNaissance', 'date', array(
                 //pour afficher les 70 années précédent l'année en cours
-                'years' => range(date('Y')-70, date('Y')),
-                'label'=>'Date de naissance',
+                'years' => range(date('Y') - 70, date('Y')),
+                'label' => 'Date de naissance',
             ))
             ->add('adresse')
-            ->add('codePostal', 'text', array('label'=>'Code postal'))
+            ->add('codePostal', 'text', array('label' => 'Code postal'))
             ->add('ville')
         ;
     }
@@ -34,7 +34,7 @@ class NounouType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Nounou'
+            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Nounou',
         ));
     }
 

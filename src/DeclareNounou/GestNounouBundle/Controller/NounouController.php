@@ -9,13 +9,11 @@ use DeclareNounou\GestNounouBundle\Form\Type\NounouType;
 
 /**
  * Nounou controller.
- *
  */
 class NounouController extends Controller
 {
     /**
      * Lists all Nounou entities.
-     *
      */
     public function indexAction()
     {
@@ -30,7 +28,6 @@ class NounouController extends Controller
 
     /**
      * Creates a new Nounou entity.
-     *
      */
     public function createAction(Request $request)
     {
@@ -49,17 +46,17 @@ class NounouController extends Controller
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
-    * Creates a form to create a Nounou entity.
-    *
-    * @param Nounou $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to create a Nounou entity.
+     *
+     * @param Nounou $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createCreateForm(Nounou $entity)
     {
         $form = $this->createForm(new NounouType(), $entity, array(
@@ -74,22 +71,20 @@ class NounouController extends Controller
 
     /**
      * Displays a form to create a new Nounou entity.
-     *
      */
     public function newAction()
     {
         $entity = new Nounou();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
      * Finds and displays a Nounou entity.
-     *
      */
     public function showAction($id)
     {
@@ -104,13 +99,12 @@ class NounouController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),        ));
     }
 
     /**
      * Displays a form to edit an existing Nounou entity.
-     *
      */
     public function editAction($id)
     {
@@ -126,19 +120,19 @@ class NounouController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Nounou entity.
-    *
-    * @param Nounou $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Nounou entity.
+     *
+     * @param Nounou $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Nounou $entity)
     {
         $form = $this->createForm(new NounouType(), $entity, array(
@@ -151,7 +145,7 @@ class NounouController extends Controller
             'submit',
             array(
                 'label' => 'Modifier',
-                'attr' => array('class' => 'updateButton btn btn-warning')
+                'attr' => array('class' => 'updateButton btn btn-warning'),
             )
         );
 
@@ -160,7 +154,6 @@ class NounouController extends Controller
 
     /**
      * Edits an existing Nounou entity.
-     *
      */
     public function updateAction(Request $request, $id)
     {
@@ -183,15 +176,14 @@ class NounouController extends Controller
         }
 
         return $this->render('DeclareNounouGestNounouBundle:Nounou:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
      * Deletes a Nounou entity.
-     *
      */
     public function deleteAction(Request $request, $id)
     {

@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * Contrat
+ * Contrat.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\ContratRepository")
@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 class Contrat
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -38,7 +38,6 @@ class Contrat
     private $nounou;
 
     /**
-     *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Pointage", mappedBy="contrat")
      */
     private $pointages;
@@ -58,7 +57,7 @@ class Contrat
     private $dateFin;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="heures_mensuelles", type="integer")
      * @Assert\Range(min="0",max="999")
@@ -90,9 +89,9 @@ class Contrat
     private $tarifIndemnite;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -100,9 +99,10 @@ class Contrat
     }
 
     /**
-     * Set dateDebut
+     * Set dateDebut.
      *
-     * @param  \DateTime $dateDebut
+     * @param \DateTime $dateDebut
+     *
      * @return Contrat
      */
     public function setDateDebut($dateDebut)
@@ -113,7 +113,7 @@ class Contrat
     }
 
     /**
-     * Get dateDebut
+     * Get dateDebut.
      *
      * @return \DateTime
      */
@@ -123,9 +123,10 @@ class Contrat
     }
 
     /**
-     * Set dateFin
+     * Set dateFin.
      *
-     * @param  \DateTime $dateFin
+     * @param \DateTime $dateFin
+     *
      * @return Contrat
      */
     public function setDateFin($dateFin)
@@ -136,7 +137,7 @@ class Contrat
     }
 
     /**
-     * Get dateFin
+     * Get dateFin.
      *
      * @return \DateTime
      */
@@ -146,9 +147,10 @@ class Contrat
     }
 
     /**
-     * Set heuresMensuelles
+     * Set heuresMensuelles.
      *
-     * @param  integer $heuresMensuelles
+     * @param int $heuresMensuelles
+     *
      * @return Contrat
      */
     public function setHeuresMensuelles($heuresMensuelles)
@@ -159,9 +161,9 @@ class Contrat
     }
 
     /**
-     * Get heuresMensuelles
+     * Get heuresMensuelles.
      *
-     * @return integer
+     * @return int
      */
     public function getHeuresMensuelles()
     {
@@ -169,9 +171,10 @@ class Contrat
     }
 
     /**
-     * Set tarifHoraire
+     * Set tarifHoraire.
      *
-     * @param  float   $tarifHoraire
+     * @param float $tarifHoraire
+     *
      * @return Contrat
      */
     public function setTarifHoraire($tarifHoraire)
@@ -182,7 +185,7 @@ class Contrat
     }
 
     /**
-     * Get tarifHoraire
+     * Get tarifHoraire.
      *
      * @return float
      */
@@ -192,9 +195,10 @@ class Contrat
     }
 
     /**
-     * Set tarifRepas
+     * Set tarifRepas.
      *
-     * @param  float   $tarifRepas
+     * @param float $tarifRepas
+     *
      * @return Contrat
      */
     public function setTarifRepas($tarifRepas)
@@ -205,7 +209,7 @@ class Contrat
     }
 
     /**
-     * Get tarifRepas
+     * Get tarifRepas.
      *
      * @return float
      */
@@ -215,9 +219,10 @@ class Contrat
     }
 
     /**
-     * Set tarifIndemnite
+     * Set tarifIndemnite.
      *
-     * @param  float   $tarifIndemnite
+     * @param float $tarifIndemnite
+     *
      * @return Contrat
      */
     public function setTarifIndemnite($tarifIndemnite)
@@ -228,7 +233,7 @@ class Contrat
     }
 
     /**
-     * Get tarifIndemnite
+     * Get tarifIndemnite.
      *
      * @return float
      */
@@ -238,9 +243,10 @@ class Contrat
     }
 
     /**
-     * Set enfant
+     * Set enfant.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Enfant $enfant
+     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfant
+     *
      * @return Contrat
      */
     public function setEnfant(\DeclareNounou\GestNounouBundle\Entity\Enfant $enfant = null)
@@ -251,7 +257,7 @@ class Contrat
     }
 
     /**
-     * Get enfant
+     * Get enfant.
      *
      * @return \DeclareNounou\GestNounouBundle\Entity\Enfant
      */
@@ -261,9 +267,10 @@ class Contrat
     }
 
     /**
-     * Set nounou
+     * Set nounou.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Nounou $nounou
+     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounou
+     *
      * @return Contrat
      */
     public function setNounou(\DeclareNounou\GestNounouBundle\Entity\Nounou $nounou = null)
@@ -274,7 +281,7 @@ class Contrat
     }
 
     /**
-     * Get nounou
+     * Get nounou.
      *
      * @return \DeclareNounou\GestNounouBundle\Entity\Nounou
      */
@@ -284,7 +291,8 @@ class Contrat
     }
 
     /**
-     * méthode vérifiant les dates début et fin
+     * méthode vérifiant les dates début et fin.
+     *
      * @param \Symfony\Component\Validator\ExecutionContextInterface $context
      */
     public function datesValides(ExecutionContextInterface $context)
@@ -300,7 +308,7 @@ class Contrat
         }
     }
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -308,9 +316,10 @@ class Contrat
     }
 
     /**
-     * Add pointages
+     * Add pointages.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Pointage $pointages
+     * @param \DeclareNounou\GestNounouBundle\Entity\Pointage $pointages
+     *
      * @return Contrat
      */
     public function addPointage(\DeclareNounou\GestNounouBundle\Entity\Pointage $pointages)
@@ -321,7 +330,7 @@ class Contrat
     }
 
     /**
-     * Remove pointages
+     * Remove pointages.
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Pointage $pointages
      */
@@ -331,7 +340,7 @@ class Contrat
     }
 
     /**
-     * Get pointages
+     * Get pointages.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -342,7 +351,8 @@ class Contrat
 
     /**
      * méthode retournant une chaîne de caractères
-     * constituée de la date de début
+     * constituée de la date de début.
+     *
      * @return string
      */
     public function __toString()

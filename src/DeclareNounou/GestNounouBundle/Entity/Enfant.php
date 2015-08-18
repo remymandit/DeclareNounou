@@ -5,7 +5,7 @@ namespace DeclareNounou\GestNounouBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Enfant
+ * Enfant.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="DeclareNounou\GestNounouBundle\Entity\EnfantRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Enfant extends AbstractPersonne
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,22 +22,20 @@ class Enfant extends AbstractPersonne
     private $id;
 
     /**
-     *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Contrat", mappedBy="enfant")
      */
     private $contrats;
 
     /**
-     *
      * @ORM\ManyToOne(targetEntity="DeclareNounou\UserBundle\Entity\User", inversedBy="enfants")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -45,9 +43,10 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Set nom
+     * Set nom.
      *
-     * @param  string $nom
+     * @param string $nom
+     *
      * @return Enfant
      */
     public function setNom($nom)
@@ -58,9 +57,10 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Set prenom
+     * Set prenom.
      *
-     * @param  string $prenom
+     * @param string $prenom
+     *
      * @return Enfant
      */
     public function setPrenom($prenom)
@@ -71,9 +71,10 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Set dateNaissance
+     * Set dateNaissance.
      *
-     * @param  \DateTime $dateNaissance
+     * @param \DateTime $dateNaissance
+     *
      * @return Enfant
      */
     public function setDateNaissance($dateNaissance)
@@ -84,7 +85,7 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -92,9 +93,10 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Add contrats
+     * Add contrats.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Contrat $contrats
+     * @param \DeclareNounou\GestNounouBundle\Entity\Contrat $contrats
+     *
      * @return Enfant
      */
     public function addContrat(\DeclareNounou\GestNounouBundle\Entity\Contrat $contrats)
@@ -105,7 +107,7 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Remove contrats
+     * Remove contrats.
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Contrat $contrats
      */
@@ -115,7 +117,7 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Get contrats
+     * Get contrats.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -125,9 +127,10 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param  \DeclareNounou\UserBundle\Entity\User $user
+     * @param \DeclareNounou\UserBundle\Entity\User $user
+     *
      * @return Enfant
      */
     public function setUser(\DeclareNounou\UserBundle\Entity\User $user)
@@ -138,7 +141,7 @@ class Enfant extends AbstractPersonne
     }
 
     /**
-     * Get user
+     * Get user.
      *
      * @return \DeclareNounou\UserBundle\Entity\User
      */

@@ -7,7 +7,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class DeclareNounouUserBundle extends Bundle
 {
     /**
-     * héritage du bundle FOSUser
+     * héritage du bundle FOSUser.
+     *
      * @return string
      */
     public function getParent()

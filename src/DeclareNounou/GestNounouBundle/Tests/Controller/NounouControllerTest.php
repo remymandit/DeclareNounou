@@ -12,8 +12,8 @@ class NounouControllerTest extends WebTestCase
         $client = static::createClient();
 
         // User registration
-        $crawler = $client->request('GET','/fr/login');
-        $this->assertGreaterThan(0,$crawler->filter('html:contains("Connexion")')->count());
+        $crawler = $client->request('GET', '/fr/login');
+        $this->assertGreaterThan(0, $crawler->filter('html:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
             '_password' => 'secret1',
@@ -23,16 +23,16 @@ class NounouControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/nounou/');
         $this->assertCount(1, $crawler->filter('td:contains("Duras")'), 'Missing element td:contains("Duras")');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /nounou/");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /nounou/');
         $crawler = $client->click($crawler->selectLink('Ajouter une nourrice')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Ajouter')->form(array(
-            'DeclareNounou_gestnounoubundle_nounou[nom]'  => 'Test',
-            'DeclareNounou_gestnounoubundle_nounou[prenom]'  => 'Test',
-            'DeclareNounou_gestnounoubundle_nounou[adresse]'  => '5 rue du four',
-            'DeclareNounou_gestnounoubundle_nounou[codePostal]'  => '55400',
-            'DeclareNounou_gestnounoubundle_nounou[ville]'  => 'Etain',
+            'DeclareNounou_gestnounoubundle_nounou[nom]' => 'Test',
+            'DeclareNounou_gestnounoubundle_nounou[prenom]' => 'Test',
+            'DeclareNounou_gestnounoubundle_nounou[adresse]' => '5 rue du four',
+            'DeclareNounou_gestnounoubundle_nounou[codePostal]' => '55400',
+            'DeclareNounou_gestnounoubundle_nounou[ville]' => 'Etain',
         ));
 
         $client->submit($form);
@@ -44,8 +44,8 @@ class NounouControllerTest extends WebTestCase
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Modifier la fiche')->link());
         $form = $crawler->selectButton('Modifier')->form(array(
-            'DeclareNounou_gestnounoubundle_nounou[nom]'  => 'Foo',
-            'DeclareNounou_gestnounoubundle_nounou[prenom]'  => 'Foo',
+            'DeclareNounou_gestnounoubundle_nounou[nom]' => 'Foo',
+            'DeclareNounou_gestnounoubundle_nounou[prenom]' => 'Foo',
         ));
         $client->submit($form);
         $crawler = $client->followRedirect();

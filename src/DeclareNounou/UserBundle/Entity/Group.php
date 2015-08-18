@@ -1,4 +1,5 @@
 <?php
+
 namespace DeclareNounou\UserBundle\Entity;
 
 use FOS\UserBundle\Model\Group as BaseGroup;
@@ -11,7 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Group extends BaseGroup
 {
     /**
-     *
      * @var type
      * @ORM\Id
      * @ORM\Column(type="integer")

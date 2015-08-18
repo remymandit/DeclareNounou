@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * User.
  *
  * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="DeclareNounou\UserBundle\Entity\UserRepository")
@@ -17,7 +17,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 class User extends BaseUser
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -26,19 +26,16 @@ class User extends BaseUser
     protected $id;
 
     /**
-     *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Enfant", mappedBy="user")
      */
     private $enfants;
 
     /**
-     *
      * @ORM\OneToMany(targetEntity="DeclareNounou\GestNounouBundle\Entity\Nounou", mappedBy="user")
      */
     private $nounous;
 
     /**
-     *
      * @var type
      * @ORM\ManyToMany(targetEntity="DeclareNounou\UserBundle\Entity\Group")
      * @ORM\JoinTable(name="fos_user_user_group",
@@ -56,9 +53,10 @@ class User extends BaseUser
     protected $invitation;
 
     /**
-     * Add enfants
+     * Add enfants.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
+     * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
+     *
      * @return User
      */
     public function addEnfant(Enfant $enfants)
@@ -69,7 +67,7 @@ class User extends BaseUser
     }
 
     /**
-     * Remove enfants
+     * Remove enfants.
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Enfant $enfants
      */
@@ -79,7 +77,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get enfants
+     * Get enfants.
      *
      * @return \DeclareNounou\GestNounouBundle\Entity\Enfant[]
      */
@@ -89,9 +87,10 @@ class User extends BaseUser
     }
 
     /**
-     * Add nounous
+     * Add nounous.
      *
-     * @param  \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
+     * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
+     *
      * @return User
      */
     public function addNounous(Nounou $nounous)
@@ -102,7 +101,7 @@ class User extends BaseUser
     }
 
     /**
-     * Remove nounous
+     * Remove nounous.
      *
      * @param \DeclareNounou\GestNounouBundle\Entity\Nounou $nounous
      */
@@ -112,7 +111,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get nounous
+     * Get nounous.
      *
      * @return \DeclareNounou\GestNounouBundle\Entity\Nounou[]
      */

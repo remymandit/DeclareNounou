@@ -9,13 +9,11 @@ use DeclareNounou\GestNounouBundle\Form\Type\ContratType;
 
 /**
  * Contrat controller.
- *
  */
 class ContratController extends Controller
 {
     /**
      * Lists all Contrat entities.
-     *
      */
     public function indexAction()
     {
@@ -32,7 +30,6 @@ class ContratController extends Controller
 
     /**
      * Creates a new Contrat entity.
-     *
      */
     public function createAction(Request $request)
     {
@@ -50,17 +47,17 @@ class ContratController extends Controller
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
-    * Creates a form to create a Contrat entity.
-    *
-    * @param Contrat $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to create a Contrat entity.
+     *
+     * @param Contrat $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createCreateForm(Contrat $entity)
     {
         $form = $this->createForm(new ContratType($this->getUser()), $entity, array(
@@ -75,22 +72,20 @@ class ContratController extends Controller
 
     /**
      * Displays a form to create a new Contrat entity.
-     *
      */
     public function newAction()
     {
         $entity = new Contrat();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
      * Finds and displays a Contrat entity.
-     *
      */
     public function showAction($id)
     {
@@ -105,14 +100,13 @@ class ContratController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
      * Displays a form to edit an existing Contrat entity.
-     *
      */
     public function editAction($id)
     {
@@ -128,19 +122,19 @@ class ContratController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Contrat entity.
-    *
-    * @param Contrat $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Contrat entity.
+     *
+     * @param Contrat $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Contrat $entity)
     {
         $form = $this->createForm(new ContratType($this->getUser()), $entity, array(
@@ -153,7 +147,7 @@ class ContratController extends Controller
             'submit',
             array(
                 'label' => 'Modifier',
-                'attr' => array('class' => 'updateButton btn btn-warning')
+                'attr' => array('class' => 'updateButton btn btn-warning'),
             )
         );
 
@@ -162,7 +156,6 @@ class ContratController extends Controller
 
     /**
      * Edits an existing Contrat entity.
-     *
      */
     public function updateAction(Request $request, $id)
     {
@@ -185,15 +178,14 @@ class ContratController extends Controller
         }
 
         return $this->render('DeclareNounouGestNounouBundle:Contrat:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
      * Deletes a Contrat entity.
-     *
      */
     public function deleteAction(Request $request, $id)
     {
@@ -233,7 +225,7 @@ class ContratController extends Controller
                 'submit',
                 array(
                     'label' => 'Supprimer',
-                    'attr' => array('class' => 'deleteButton btn btn-danger')
+                    'attr' => array('class' => 'deleteButton btn btn-danger'),
                 )
             )
             ->getForm()

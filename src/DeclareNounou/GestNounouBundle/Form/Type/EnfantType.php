@@ -16,11 +16,11 @@ class EnfantType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('prenom', 'text', array('label'=>'Prénom'))
+            ->add('prenom', 'text', array('label' => 'Prénom'))
             ->add('dateNaissance', 'date', array(
                 //pour afficher les 15 années précédent l'année en cours
-                'years' => range(date('Y')-15, date('Y')),
-                'label'=>'Date de naissance',
+                'years' => range(date('Y') - 15, date('Y')),
+                'label' => 'Date de naissance',
             ))
         ;
     }
@@ -31,7 +31,7 @@ class EnfantType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Enfant'
+            'data_class' => 'DeclareNounou\GestNounouBundle\Entity\Enfant',
         ));
     }
 

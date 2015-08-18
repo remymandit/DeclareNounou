@@ -31,7 +31,7 @@ abstract class AbstractPersonne
     protected $dateNaissance;
 
     /**
-     * Get nom
+     * Get nom.
      *
      * @return string
      */
@@ -41,7 +41,7 @@ abstract class AbstractPersonne
     }
 
     /**
-     * Get prenom
+     * Get prenom.
      *
      * @return string
      */
@@ -51,7 +51,7 @@ abstract class AbstractPersonne
     }
 
     /**
-     * Get dateNaissance
+     * Get dateNaissance.
      *
      * @return \DateTime
      */
@@ -62,7 +62,8 @@ abstract class AbstractPersonne
 
     /**
      * méthode retournant une chaîne de caractères
-     * constituée du nom et du prénom
+     * constituée du nom et du prénom.
+     *
      * @return string
      */
     public function __toString()

@@ -9,13 +9,11 @@ use DeclareNounou\GestNounouBundle\Form\Type\EnfantType;
 
 /**
  * Enfant controller.
- *
  */
 class EnfantController extends Controller
 {
     /**
      * Lists all Enfant entities.
-     *
      */
     public function indexAction()
     {
@@ -29,7 +27,6 @@ class EnfantController extends Controller
 
     /**
      * Creates a new Enfant entity.
-     *
      */
     public function createAction(Request $request)
     {
@@ -48,17 +45,17 @@ class EnfantController extends Controller
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
-    * Creates a form to create a Enfant entity.
-    *
-    * @param Enfant $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to create a Enfant entity.
+     *
+     * @param Enfant $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createCreateForm(Enfant $entity)
     {
         $form = $this
@@ -73,7 +70,7 @@ class EnfantController extends Controller
             'submit',
             array(
                 'label' => 'Ajouter',
-                'attr' => array('class' => 'addButton btn btn-danger')
+                'attr' => array('class' => 'addButton btn btn-danger'),
             )
         );
 
@@ -82,22 +79,20 @@ class EnfantController extends Controller
 
     /**
      * Displays a form to create a new Enfant entity.
-     *
      */
     public function newAction()
     {
         $entity = new Enfant();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
      * Finds and displays a Enfant entity.
-     *
      */
     public function showAction($id)
     {
@@ -112,13 +107,12 @@ class EnfantController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),        ));
     }
 
     /**
      * Displays a form to edit an existing Enfant entity.
-     *
      */
     public function editAction($id)
     {
@@ -134,19 +128,19 @@ class EnfantController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Enfant entity.
-    *
-    * @param Enfant $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Enfant entity.
+     *
+     * @param Enfant $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Enfant $entity)
     {
         $form = $this->createForm(new EnfantType(), $entity, array(
@@ -161,7 +155,6 @@ class EnfantController extends Controller
 
     /**
      * Edits an existing Enfant entity.
-     *
      */
     public function updateAction(Request $request, $id)
     {
@@ -184,15 +177,14 @@ class EnfantController extends Controller
         }
 
         return $this->render('DeclareNounouGestNounouBundle:Enfant:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
      * Deletes a Enfant entity.
-     *
      */
     public function deleteAction(Request $request, $id)
     {

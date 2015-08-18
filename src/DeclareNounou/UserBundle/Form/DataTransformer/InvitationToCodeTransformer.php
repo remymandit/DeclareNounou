@@ -22,7 +22,7 @@ class InvitationToCodeTransformer implements DataTransformerInterface
     public function transform($value)
     {
         if (null === $value) {
-            return null;
+            return;
         }
 
         if (!$value instanceof Invitation) {
@@ -35,7 +35,7 @@ class InvitationToCodeTransformer implements DataTransformerInterface
     public function reverseTransform($value)
     {
         if (null === $value || '' === $value) {
-            return null;
+            return;
         }
 
         if (!is_string($value)) {

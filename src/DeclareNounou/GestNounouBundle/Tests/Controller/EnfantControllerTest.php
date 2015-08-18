@@ -12,8 +12,8 @@ class EnfantControllerTest extends WebTestCase
         $client = static::createClient();
 
         // User registration
-        $crawler = $client->request('GET','/fr/login');
-        $this->assertGreaterThan(0,$crawler->filter('html:contains("Connexion")')->count());
+        $crawler = $client->request('GET', '/fr/login');
+        $this->assertGreaterThan(0, $crawler->filter('html:contains("Connexion")')->count());
         $form = $crawler->selectButton('Connexion')->form(array(
             '_username' => 'moi',
             '_password' => 'secret1',
@@ -23,13 +23,13 @@ class EnfantControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/enfant/');
         $this->assertCount(1, $crawler->filter('td:contains("Daudet")'), 'Missing element td:contains("Daudet")');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /enfant/");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /enfant/');
         $crawler = $client->click($crawler->selectLink('Ajouter un enfant')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Ajouter')->form(array(
-            'DeclareNounou_gestnounoubundle_enfant[nom]'  => 'Test',
-            'DeclareNounou_gestnounoubundle_enfant[prenom]'  => 'Test',
+            'DeclareNounou_gestnounoubundle_enfant[nom]' => 'Test',
+            'DeclareNounou_gestnounoubundle_enfant[prenom]' => 'Test',
         ));
         $client->submit($form);
         $crawler = $client->followRedirect();
@@ -40,8 +40,8 @@ class EnfantControllerTest extends WebTestCase
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Modifier la fiche')->link());
         $form = $crawler->selectButton('Modifier')->form(array(
-            'DeclareNounou_gestnounoubundle_enfant[nom]'  => 'Foo',
-            'DeclareNounou_gestnounoubundle_enfant[prenom]'  => 'Foo',
+            'DeclareNounou_gestnounoubundle_enfant[nom]' => 'Foo',
+            'DeclareNounou_gestnounoubundle_enfant[prenom]' => 'Foo',
         ));
         $client->submit($form);
         $crawler = $client->followRedirect();
@@ -54,6 +54,5 @@ class EnfantControllerTest extends WebTestCase
 
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
-
     }
 }

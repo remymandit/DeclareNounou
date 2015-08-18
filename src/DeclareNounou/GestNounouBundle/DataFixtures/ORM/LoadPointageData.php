@@ -1,5 +1,7 @@
 <?php
+
 namespace DeclareNounou\GestNounouBundle\DataFixtures\ORM;
+
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -8,7 +10,8 @@ use DeclareNounou\GestNounouBundle\Entity\Pointage;
 class LoadPointageData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
-     * {inheritDoc}
+     * {inheritDoc}.
+     *
      * @param \Doctrine\Common\Persistence\ObjectManager $manager
      */
     public function load(ObjectManager $manager)
@@ -51,11 +54,10 @@ class LoadPointageData extends AbstractFixture implements OrderedFixtureInterfac
     }
 
     /**
-     * {inheritDoc}
+     * {inheritDoc}.
      */
     public function getOrder()
     {
         return 5;
     }
-
 }

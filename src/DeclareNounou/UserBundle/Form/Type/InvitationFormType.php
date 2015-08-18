@@ -24,9 +24,9 @@ class InvitationFormType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'class'    => 'DeclareNounou\UserBundle\Entity\Invitation',
+            'class' => 'DeclareNounou\UserBundle\Entity\Invitation',
             'required' => true,
-            'label'    => 'Code d\'invitation :'
+            'label' => 'Code d\'invitation :',
         ));
     }
 
