@@ -7,7 +7,7 @@ Déclare Nounou
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8/mini.png)](https://insight.sensiolabs.com/projects/212ef98e-d99e-44b9-9fb1-8bdc2c701cb8)
 
-Déclare Nounou est une application web développée sous symfony2.5.5.
+Déclare Nounou est une application web développée sous symfony2.7.3.
 
 Cette application permet de gérer les heures, le salaire et la déclaration CAF de la nourrice.
 
@@ -17,13 +17,14 @@ Plusieurs fonctionnalités sont/seront disponibles :
 * ajouter, modifier, lire et supprimer la fiche d'une nourrice [done]
 * ajouter, modifier, lire et supprimer le contrat d'une nourrice [done]
 * s'inscrire, se connecter, modifier son profil [done]
-* envoyer un mail à l'administrateur pour son accord à l'inscription [todo]
-* ajouter, modifier, lire et supprimer les heures réalisées d'une nourrice [done]
+* inscription béta [work in progress]
+* ajouter, modifier, lire et supprimer les heures réalisées d'une nourrice [work in progress]
 * calcul du salaire en fonction des heures réalisées et des heures du contrat [todo]
 * récapitulatif des données mensuelles pour la déclaration CAF (pajemploi) [todo]
-* envoyer la fiche de paie au format pdf par mail à la nourrice [todo]
+* envoyer la fiche mensuelle au format pdf par mail à la nourrice [todo]
 * créer, modifier, lire un planning prévisionnel annuel [todo]
 * se connecter à pajemploi [todo]
+* administration du site [todo]
 
 
 Installation
@@ -71,8 +72,6 @@ Les dépendances
 L'application contient les bundles suivants :
 
   * **friendsofsymfony/user-bundle** - Gestion des utilisateurs
-
-  * **winzou/console-bundle** - Accés à la console sur le serveur
 
   * **jms/security-extra-bundle** - Sécuriser l'accés à certaines pages grâce aux annotations
   
