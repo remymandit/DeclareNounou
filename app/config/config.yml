@@ -91,3 +91,7 @@ fos_user:
     registration:
         form:
             type: declarenounou_user_registration
+
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
