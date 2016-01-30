@@ -8,7 +8,6 @@
 /app/sessions/*
 /vendor/
 /app/config/parameters.yml
-/nbproject/
 /bin/
 *~
 *.htaccess
