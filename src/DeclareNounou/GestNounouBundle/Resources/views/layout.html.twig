@@ -11,6 +11,7 @@
             '@DeclareNounouGestNounouBundle/Resources/public/css/styleNounou.css'
             '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap3/css/bootstrap.css'
             'bundles/declarenounougestnounou/css/elusive-iconfont-master/css/elusive-webfont.css'
+            '@DeclareNounouGestNounouBundle/Resources/public/css/datepicker3.css'
         %}
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
@@ -53,8 +54,11 @@
         {% javascripts filter='uglifyjs2'
             '@DeclareNounouGestNounouBundle/Resources/public/js/jquery.js'
             '@DeclareNounouGestNounouBundle/Resources/public/css/bootstrap3/js/bootstrap.js'
-            '@DeclareNounouGestNounouBundle/Resources/public/js/mainFunctions.js'
             '@DeclareNounouGestNounouBundle/Resources/public/js/calculateHours.js'
+            '@DeclareNounouGestNounouBundle/Resources/public/js/bootstrapDatepicker/bootstrap-datepicker.js'
+            '@DeclareNounouGestNounouBundle/Resources/public/js/bootstrapDatepicker/locales/bootstrap-datepicker.fr.js'
+            '@DeclareNounouGestNounouBundle/Resources/public/js/listHoursAjax.js'
+            '@DeclareNounouGestNounouBundle/Resources/public/js/mainFunctions.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}

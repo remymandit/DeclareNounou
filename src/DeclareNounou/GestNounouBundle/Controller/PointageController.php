@@ -9,28 +9,47 @@ use DeclareNounou\GestNounouBundle\Form\Type\PointageType;
 
 /**
  * Pointage controller.
- *
  */
 class PointageController extends Controller
 {
-
     /**
      * Lists all Pointage entities.
-     *
+     * 
+     * @return type view
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Pointage')->findAll();
-
+        $entities = $em->getRepository('DeclareNounouGestNounouBundle:Contrat')->findAll();
+        
         return $this->render('DeclareNounouGestNounouBundle:Pointage:index.html.twig', array(
             'entities' => $entities,
         ));
     }
+
+    /**
+     * Lists all Pointage entities acording to the contract, month and year.
+     * 
+     * @param type $contract
+     * @param type $date
+     * @return type view
+     */
+    public function listAction($contract, $date)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $pointages = $em->getRepository('DeclareNounouGestNounouBundle:Pointage')
+                ->findByContractAndMonth($contract, $date);
+        return $this->render('DeclareNounouGestNounouBundle:Pointage:list.html.twig', array(
+            'entities'=>$pointages,
+        ));
+    }
+    
     /**
      * Creates a new Pointage entity.
-     *
+     * 
+     * @param Request $request
+     * @return type view
      */
     public function createAction(Request $request)
     {
@@ -48,17 +67,17 @@ class PointageController extends Controller
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
-    * Creates a form to create a Pointage entity.
-    *
-    * @param Pointage $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to create a Pointage entity.
+     *
+     * @param Pointage $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createCreateForm(Pointage $entity)
     {
         $form = $this->createForm(new PointageType($this->getUser()), $entity, array(
@@ -66,29 +85,33 @@ class PointageController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Ajouter','attr' => array('class' => 'addButton btn btn-danger')));
+        $form->add('submit', 'submit', array('label' => 'Ajouter', 'attr' => array('class' => 'addButton btn btn-danger')));
 
         return $form;
     }
 
     /**
      * Displays a form to create a new Pointage entity.
-     *
+     * 
+     * @return type view
      */
     public function newAction()
     {
         $entity = new Pointage();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
     /**
      * Finds and displays a Pointage entity.
-     *
+     * 
+     * @param type $id
+     * @return type view
+     * @throws type not found exception
      */
     public function showAction($id)
     {
@@ -103,13 +126,16 @@ class PointageController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),        ));
     }
-
+    
     /**
      * Displays a form to edit an existing Pointage entity.
-     *
+     * 
+     * @param type $id
+     * @return type view
+     * @throws type not found exception
      */
     public function editAction($id)
     {
@@ -125,19 +151,19 @@ class PointageController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Pointage entity.
-    *
-    * @param Pointage $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Pointage entity.
+     *
+     * @param Pointage $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Pointage $entity)
     {
         $form = $this->createForm(new PointageType($this->getUser()), $entity, array(
@@ -150,15 +176,20 @@ class PointageController extends Controller
                 'submit',
                 array(
                     'label' => 'Modifier',
-                    'attr' => array('class' => 'updateButton btn btn-warning')
+                    'attr' => array('class' => 'updateButton btn btn-warning'),
                     )
                 );
 
         return $form;
     }
+    
     /**
      * Edits an existing Pointage entity.
-     *
+     * 
+     * @param Request $request
+     * @param type $id
+     * @return type view
+     * @throws type not found exception
      */
     public function updateAction(Request $request, $id)
     {
@@ -181,14 +212,19 @@ class PointageController extends Controller
         }
 
         return $this->render('DeclareNounouGestNounouBundle:Pointage:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
+    
     /**
      * Deletes a Pointage entity.
-     *
+     * 
+     * @param Request $request
+     * @param type $id
+     * @return type view
+     * @throws type not found exception
      */
     public function deleteAction(Request $request, $id)
     {
@@ -228,7 +264,7 @@ class PointageController extends Controller
                     'submit',
                     array(
                         'label' => 'Supprimer',
-                        'attr' => array('class' => 'deleteButton btn btn-danger')
+                        'attr' => array('class' => 'deleteButton btn btn-danger'),
                         )
                     )
             ->getForm()

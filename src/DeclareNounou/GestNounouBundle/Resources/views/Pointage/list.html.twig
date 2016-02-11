@@ -1,0 +1,27 @@
+{% if entities is defined %}
+    {% if entities == null %}
+            <tr>
+                <td colspan="8" align="center">Aucunes données trouvées !</td>
+            </tr>
+    {% else %}
+    {% for entity in entities %}
+        <tr>
+            <td>{% if entity.datePointage %}{{ entity.datePointage|localizeddate('medium','none') }}{% endif %}</td>
+            <td>{{ entity.heureDebut|date('H:i') }}<span> h</span></td>
+            <td>{{ entity.heureFin|date('H:i') }}<span> h </span></td>
+            <td>{{ entity.heuresRealiseesPointage }}<span> h</span></td>
+            <td>{{ entity.heuresComplementaires }}<span> h</span></td>
+            <td>{{ entity.heuresNormales }}<span> h</span></td>
+            <td>{{ entity.repas }}</td>
+            <td>
+                <p>
+                    <a href="{{ path('pointage_show', { 'id': entity.id }) }}" class="btn btn-success">
+                    <span class="el-icon-eye-open"></span> Voir</a>
+                    <a href="{{ path('pointage_edit', { 'id': entity.id }) }}" class="btn btn-warning">
+                    <span class="el-icon-edit"></span> Modifier</a>
+                </p>
+            </td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+{% endif %}

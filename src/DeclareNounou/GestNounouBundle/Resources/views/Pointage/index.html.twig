@@ -3,12 +3,28 @@
 
 {% block body %}
     <h1>Liste des pointages</h1>
-
+    <div class="row-fluid">
+        <div class="col-lg-6">
+            <label for="select-contrat" class="required">Contrat</label>
+            <select id="select-contrat" class="form-control">
+                {% for entity in entities %}
+                    <option value="{{ entity.id }}">{{ entity }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-lg-3" id="datepicker-container">
+            <label>Mois / Année</label>
+            <div class="input-group date">
+                <input type="text" class="form-control" id="select-date">
+                <span class="input-group-addon">
+                    <span class="el-icon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
     <table class="table table-hover">
-        <thead>
+         <thead>
             <tr>
-                <th>Id</th>
-                <th>Contrat</th>
                 <th>Date pointage</th>
                 <th>Heure début</th>
                 <th>Heure fin</th>
@@ -19,28 +35,7 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('pointage_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.contrat }}</td>
-                <td>{% if entity.datePointage %}{{ entity.datePointage|localizeddate('medium','none') }}{% endif %}</td>
-                <td>{{ entity.heureDebut|date('H:i') }}<span> h</span></td>
-                <td>{{ entity.heureFin|date('H:i') }}<span> h </span></td>
-                <td>{{ entity.heuresRealiseesPointage }}<span> h</span></td>
-                <td>{{ entity.heuresComplementaires }}<span> h</span></td>
-                <td>{{ entity.heuresNormales }}<span> h</span></td>
-                <td>{{ entity.repas }}</td>
-                <td>
-                <p>
-                    <a href="{{ path('pointage_show', { 'id': entity.id }) }}" class="btn btn-success">
-                    <span class="el-icon-eye-open"></span> Voir</a>
-                    <a href="{{ path('pointage_edit', { 'id': entity.id }) }}" class="btn btn-warning">
-                    <span class="el-icon-edit"></span> Modifier</a>
-                </p>
-                </td>
-            </tr>
-        {% endfor %}
+        <tbody id="list-pointage">   
         </tbody>
     </table>
     <p>

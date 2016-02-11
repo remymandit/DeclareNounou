@@ -3,6 +3,11 @@ pointage:
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:index" }
     requirements: { _method: get }
 
+pointage_list:
+    pattern:  /list/{contract}/{date}
+    defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:list" }
+    requirements: { _method: get }
+
 pointage_show:
     pattern:  /{id}/show
     defaults: { _controller: "DeclareNounouGestNounouBundle:Pointage:show" }
