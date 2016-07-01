@@ -8,9 +8,15 @@ services:
 
     declarenounou.invitation.form.type:
         class: DeclareNounou\UserBundle\Form\Type\InvitationFormType
-        arguments: [@declarenounou.invitation.form.data_transformer]
+        arguments: ['@declarenounou.invitation.form.data_transformer']
         tags: [{ name: "form.type", alias: "declarenounou_invitation_type" }]
 
     declarenounou.invitation.form.data_transformer:
         class: DeclareNounou\UserBundle\Form\DataTransformer\InvitationToCodeTransformer
-        arguments: [@doctrine]
+        arguments: ['@doctrine']
+
+    admin.user:
+        class: DeclareNounou\UserBundle\Admin\UserAdmin
+        arguments: [~, DeclareNounou\UserBundle\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: User }
