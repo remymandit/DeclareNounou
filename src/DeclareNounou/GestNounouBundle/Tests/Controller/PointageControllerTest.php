@@ -22,8 +22,6 @@ class PointageControllerTest extends WebTestCase
 
         // Create a new entry in the database
         $crawler = $client->request('GET', '/pointage/');
-        $this->assertCount(2, $crawler->filter('td:contains("10:00 h")'), 'Mising element td:contains("10:00 h")');
-        $this->assertCount(1, $crawler->filter('td:contains("2 janv. 2014")'), 'Mising element td:contains("2 janv. 2014")');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /pointage/');
         $crawler = $client->click($crawler->selectLink('Ajouter un pointage')->link());
 
