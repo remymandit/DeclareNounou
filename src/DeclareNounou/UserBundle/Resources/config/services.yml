@@ -20,3 +20,4 @@ services:
         arguments: [~, DeclareNounou\UserBundle\Entity\User, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: User }
+			
